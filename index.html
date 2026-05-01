@@ -1048,14 +1048,21 @@
         .logo-track img {
             height: 110px;
             width: auto;
-            filter: grayscale(1);
-            opacity: 0.5;
             transition: all 0.4s ease;
         }
 
+        .logo-track img.logo-fssai {
+            padding: 15px;
+        }
+
         @media (max-width: 768px) {
-            .logo-track img { height: 80px; }
-            .logo-track { gap: 40px; }
+            .logo-track img {
+                height: 80px;
+            }
+
+            .logo-track {
+                gap: 40px;
+            }
         }
 
         .logo-track img:hover {
@@ -1077,11 +1084,12 @@
         /* Footer */
         .site-footer {
             position: relative;
-            background-color: var(--white);
+            background-color: #2A3132;
             border-top: 4px solid #0052FF;
             padding: 1.5rem 2rem 0.75rem;
             z-index: 1;
             overflow: hidden;
+            color: #fff;
         }
 
         .site-footer::before {
@@ -1101,7 +1109,7 @@
             position: absolute;
             inset: 0;
             background: url('https://i.ibb.co/Qjm5tR4S/Gemini-Generated-Image-snoa8gsnoa8gsnoa-1.png');
-            background-size: contain;
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             opacity: 0.10;
@@ -1123,7 +1131,7 @@
         .footer-logo {
             font-size: 1.3rem;
             font-weight: 800;
-            color: #0A2540;
+            color: #fff;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
@@ -1136,7 +1144,7 @@
         }
 
         .about-text {
-            color: #64748B;
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
             margin-bottom: 0.5rem;
             font-size: 0.85rem;
@@ -1168,7 +1176,7 @@
         .col-title {
             font-size: 0.9rem;
             font-weight: 700;
-            color: #0A2540;
+            color: #fff;
             margin-bottom: 0.4rem;
             position: relative;
             padding-bottom: 0.4rem;
@@ -1195,7 +1203,7 @@
         }
 
         .footer-links a {
-            color: #64748B;
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
@@ -1232,17 +1240,17 @@
         .contact-icon {
             width: 30px;
             height: 30px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0052FF;
+            color: #fff;
             font-size: 0.8rem;
-            box-shadow: 0 4px 15px rgba(0, 82, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             flex-shrink: 0;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 82, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-item:hover .contact-icon {
@@ -1254,14 +1262,14 @@
         .contact-text strong {
             display: block;
             font-size: 0.85rem;
-            color: #0A2540;
+            color: #fff;
             margin-bottom: 0.3rem;
             letter-spacing: 0.5px;
         }
 
         .contact-text p,
         .contact-text a {
-            color: #64748B;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.82rem;
             line-height: 1.4;
             text-decoration: none;
@@ -1276,7 +1284,7 @@
             max-width: 1280px;
             margin: 0.75rem auto 0;
             padding-top: 0.75rem;
-            border-top: 1px solid #E2E8F0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 2;
         }
@@ -1288,12 +1296,12 @@
         }
 
         .footer-bottom p {
-            color: #64748B;
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.8rem;
         }
 
         .footer-bottom strong {
-            color: #0A2540;
+            color: #fff;
         }
 
         .social-links {
@@ -1305,14 +1313,14 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #fff;
-            color: #0A2540;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #E2E8F0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.75rem;
         }
 
@@ -1484,8 +1492,8 @@
                 </ul>
             </div>
             <a class="brand-banner" href="index.html">
-                <img src="https://i.ibb.co/9k92PRb6/Image-To-Stl-com-TEIOF-IMPEXcontainer-copy-1.png"
-                    alt="TEIOF Logo" class="main-logo-img">
+                <img src="https://i.ibb.co/9k92PRb6/Image-To-Stl-com-TEIOF-IMPEXcontainer-copy-1.png" alt="TEIOF Logo"
+                    class="main-logo-img">
             </a>
         </div>
     </nav>
@@ -1875,7 +1883,9 @@
                         sourcing practices, ensuring that every product we export meets the highest global standards
                         while delivering maximum value to our partners.</p>
                     <div class="mt-5 gs-reveal">
-                        <a href="about.html" class="hero-btn" style="background: var(--accent); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">Learn More
+                        <a href="about.html" class="hero-btn"
+                            style="background: var(--accent); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">Learn
+                            More
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -2050,6 +2060,7 @@
         </div>
     </section>
 
+    
     <!-- Recognition Section -->
     <section class="recognition-section">
         <div class="container">
@@ -2062,16 +2073,10 @@
                         alt="IOPEPC">
                     <img src="https://static.wixstatic.com/media/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png"
                         alt="FIEO">
-                    <img src="https://static.wixstatic.com/media/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png"
-                        alt="Dun & Bradstreet">
                     <img src="https://static.wixstatic.com/media/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png"
                         alt="APEDA">
-                    <img src="https://static.wixstatic.com/media/28a759_1584f8839e444a5b97a62138e809511d~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_1584f8839e444a5b97a62138e809511d~mv2.png"
-                        alt="APC">
-                    <img src="https://static.wixstatic.com/media/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png"
-                        alt="NDFTA">
-                    <img src="https://static.wixstatic.com/media/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png"
-                        alt="GPC">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/FSSAI_logo.png"
+                        alt="FSSAI" class="logo-fssai">
                     <!-- Duplicate for seamless scroll -->
                     <img src="https://static.wixstatic.com/media/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png"
                         alt="Spice Board">
@@ -2079,16 +2084,10 @@
                         alt="IOPEPC">
                     <img src="https://static.wixstatic.com/media/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png"
                         alt="FIEO">
-                    <img src="https://static.wixstatic.com/media/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png"
-                        alt="Dun & Bradstreet">
                     <img src="https://static.wixstatic.com/media/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png"
                         alt="APEDA">
-                    <img src="https://static.wixstatic.com/media/28a759_1584f8839e444a5b97a62138e809511d~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_1584f8839e444a5b97a62138e809511d~mv2.png"
-                        alt="APC">
-                    <img src="https://static.wixstatic.com/media/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png"
-                        alt="NDFTA">
-                    <img src="https://static.wixstatic.com/media/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png"
-                        alt="GPC">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/FSSAI_logo.png"
+                        alt="FSSAI" class="logo-fssai">
                 </div>
             </div>
         </div>
