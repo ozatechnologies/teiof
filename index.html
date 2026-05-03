@@ -1048,14 +1048,21 @@
         .logo-track img {
             height: 110px;
             width: auto;
-            filter: grayscale(1);
-            opacity: 0.5;
             transition: all 0.4s ease;
         }
 
+        .logo-track img.logo-fssai {
+            padding: 15px;
+        }
+
         @media (max-width: 768px) {
-            .logo-track img { height: 80px; }
-            .logo-track { gap: 40px; }
+            .logo-track img {
+                height: 80px;
+            }
+
+            .logo-track {
+                gap: 40px;
+            }
         }
 
         .logo-track img:hover {
@@ -1077,11 +1084,12 @@
         /* Footer */
         .site-footer {
             position: relative;
-            background-color: var(--white);
+            background-color: #2A3132;
             border-top: 4px solid #0052FF;
             padding: 1.5rem 2rem 0.75rem;
             z-index: 1;
             overflow: hidden;
+            color: #fff;
         }
 
         .site-footer::before {
@@ -1100,14 +1108,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('https://i.ibb.co/Qjm5tR4S/Gemini-Generated-Image-snoa8gsnoa8gsnoa-1.png');
-            background-size: contain;
+            background: url('f2.png');
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            opacity: 0.10;
-            /* Low opacity for subtle background */
+            opacity: 0.15;
             z-index: 0;
             pointer-events: none;
+            transform: scale(0.9);
+            /* filter: brightness(0) invert(1); Temporary removal for debugging */
         }
 
         .footer-container {
@@ -1123,7 +1132,7 @@
         .footer-logo {
             font-size: 1.3rem;
             font-weight: 800;
-            color: #0A2540;
+            color: #fff;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
@@ -1132,11 +1141,11 @@
         }
 
         .footer-logo span {
-            color: #0052FF;
+            color: #fff;
         }
 
         .about-text {
-            color: #64748B;
+            color: #fff;
             line-height: 1.6;
             margin-bottom: 0.5rem;
             font-size: 0.85rem;
@@ -1168,7 +1177,7 @@
         .col-title {
             font-size: 0.9rem;
             font-weight: 700;
-            color: #0A2540;
+            color: #fff;
             margin-bottom: 0.4rem;
             position: relative;
             padding-bottom: 0.4rem;
@@ -1181,7 +1190,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background: #0052FF;
+            background: #fff;
             border-radius: 2px;
         }
 
@@ -1195,7 +1204,7 @@
         }
 
         .footer-links a {
-            color: #64748B;
+            color: #fff;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
@@ -1207,14 +1216,14 @@
 
         .footer-links a i {
             font-size: 0.75rem;
-            color: #0052FF;
+            color: #fff;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
             transform: translateX(-10px);
         }
 
         .footer-links a:hover {
-            color: #0052FF;
+            color: #fff;
             transform: translateX(5px);
         }
 
@@ -1232,36 +1241,36 @@
         .contact-icon {
             width: 30px;
             height: 30px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0052FF;
+            color: #fff;
             font-size: 0.8rem;
-            box-shadow: 0 4px 15px rgba(0, 82, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             flex-shrink: 0;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 82, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-item:hover .contact-icon {
-            background: #0052FF;
-            color: #fff;
+            background: #fff;
+            color: #2A3132;
             transform: scale(1.05) rotate(5deg);
         }
 
         .contact-text strong {
             display: block;
             font-size: 0.85rem;
-            color: #0A2540;
+            color: #fff;
             margin-bottom: 0.3rem;
             letter-spacing: 0.5px;
         }
 
         .contact-text p,
         .contact-text a {
-            color: #64748B;
+            color: #fff;
             font-size: 0.82rem;
             line-height: 1.4;
             text-decoration: none;
@@ -1269,14 +1278,15 @@
         }
 
         .contact-text a:hover {
-            color: #0052FF;
+            color: #fff;
+            text-decoration: underline;
         }
 
         .footer-bottom {
             max-width: 1280px;
             margin: 0.75rem auto 0;
             padding-top: 0.75rem;
-            border-top: 1px solid #E2E8F0;
+            border-top: 1px solid #fff;
             position: relative;
             z-index: 2;
         }
@@ -1288,12 +1298,12 @@
         }
 
         .footer-bottom p {
-            color: #64748B;
+            color: #fff;
             font-size: 0.8rem;
         }
 
         .footer-bottom strong {
-            color: #0A2540;
+            color: #fff;
         }
 
         .social-links {
@@ -1305,35 +1315,26 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #fff;
-            color: #0A2540;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #E2E8F0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.75rem;
         }
 
         .social-links a:hover {
-            background: #0052FF;
-            color: #fff;
-            border-color: #0052FF;
+            background: #fff;
+            color: #2A3132;
+            border-color: #fff;
             transform: translateY(-4px);
             box-shadow: 0 5px 15px rgba(0, 82, 255, 0.2);
         }
 
-        #globe-container {
-            position: absolute;
-            bottom: -30px;
-            right: -60px;
-            width: 280px;
-            height: 280px;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.9;
-        }
+
 
         @media (max-width: 1200px) {
             .footer-container {
@@ -1484,8 +1485,8 @@
                 </ul>
             </div>
             <a class="brand-banner" href="index.html">
-                <img src="https://i.ibb.co/9k92PRb6/Image-To-Stl-com-TEIOF-IMPEXcontainer-copy-1.png"
-                    alt="TEIOF Logo" class="main-logo-img">
+                <img src="https://i.ibb.co/9k92PRb6/Image-To-Stl-com-TEIOF-IMPEXcontainer-copy-1.png" alt="TEIOF Logo"
+                    class="main-logo-img">
             </a>
         </div>
     </nav>
@@ -1862,7 +1863,6 @@
     <section class="about-section" id="about">
         <div class="container">
             <div class="section-header">
-                <p class="section-label gs-reveal">About Us</p>
                 <h2 class="section-title gs-reveal">TEIOF Impex</h2>
             </div>
             <div class="about-grid">
@@ -1875,7 +1875,9 @@
                         sourcing practices, ensuring that every product we export meets the highest global standards
                         while delivering maximum value to our partners.</p>
                     <div class="mt-5 gs-reveal">
-                        <a href="about.html" class="hero-btn" style="background: var(--accent); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">Learn More
+                        <a href="about.html" class="hero-btn"
+                            style="background: var(--accent); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">Learn
+                            More
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -2050,6 +2052,7 @@
         </div>
     </section>
 
+
     <!-- Recognition Section -->
     <section class="recognition-section">
         <div class="container">
@@ -2062,16 +2065,10 @@
                         alt="IOPEPC">
                     <img src="https://static.wixstatic.com/media/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png"
                         alt="FIEO">
-                    <img src="https://static.wixstatic.com/media/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png"
-                        alt="Dun & Bradstreet">
                     <img src="https://static.wixstatic.com/media/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png"
                         alt="APEDA">
-                    <img src="https://static.wixstatic.com/media/28a759_1584f8839e444a5b97a62138e809511d~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_1584f8839e444a5b97a62138e809511d~mv2.png"
-                        alt="APC">
-                    <img src="https://static.wixstatic.com/media/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png"
-                        alt="NDFTA">
-                    <img src="https://static.wixstatic.com/media/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png"
-                        alt="GPC">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/FSSAI_logo.png" alt="FSSAI"
+                        class="logo-fssai">
                     <!-- Duplicate for seamless scroll -->
                     <img src="https://static.wixstatic.com/media/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png"
                         alt="Spice Board">
@@ -2079,35 +2076,27 @@
                         alt="IOPEPC">
                     <img src="https://static.wixstatic.com/media/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png"
                         alt="FIEO">
-                    <img src="https://static.wixstatic.com/media/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_beff8e587ed64a27b1ef9d58fc4ddcb4~mv2.png"
-                        alt="Dun & Bradstreet">
                     <img src="https://static.wixstatic.com/media/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png"
                         alt="APEDA">
-                    <img src="https://static.wixstatic.com/media/28a759_1584f8839e444a5b97a62138e809511d~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_1584f8839e444a5b97a62138e809511d~mv2.png"
-                        alt="APC">
-                    <img src="https://static.wixstatic.com/media/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_ae1a3b99f0474f899d8d22a64d5cbcda~mv2.png"
-                        alt="NDFTA">
-                    <img src="https://static.wixstatic.com/media/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_baf32f3e93e349d8b2cd3a71e7f62b71~mv2.png"
-                        alt="GPC">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/FSSAI_logo.png" alt="FSSAI"
+                        class="logo-fssai">
                 </div>
             </div>
         </div>
     </section>
     <footer class="site-footer" id="contact">
-        <div id="globe-container"></div>
         <div class="footer-container">
             <div class="footer-col brand-col">
                 <div class="footer-logo">
                     <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="25" y="20" width="30" height="80" fill="#0052FF" />
-                        <path d="M 20 60 Q 50 50 80 60" stroke="#0052FF" stroke-width="8" fill="none" />
-                        <circle cx="80" cy="60" r="15" stroke="#0052FF" stroke-width="3" fill="none" />
+                        <rect x="25" y="20" width="30" height="80" fill="#fff" />
+                        <path d="M 20 60 Q 50 50 80 60" stroke="#fff" stroke-width="8" fill="none" />
+                        <circle cx="80" cy="60" r="15" stroke="#fff" stroke-width="3" fill="none" />
                     </svg>
                     TEIOF <span>Impex</span>
                 </div>
                 <p class="about-text">TEIOF Impex is a global source of premium agro-based products. Quality,
                     affordability, and expertise define our commitment to excellence.</p>
-
             </div>
             <div class="footer-col">
                 <h4 class="col-title">Quick Links</h4>
@@ -2157,10 +2146,13 @@
             <div class="footer-bottom-content">
                 <p>© 2024 <strong>TEIOF Impex</strong> All rights reserved.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+917435912528"><i class="fas fa-phone-alt"></i></a>
+                    <a href="sms:+917435912528"><i class="fas fa-comment-alt"></i></a>
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -2169,7 +2161,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Three.js from Cloudflare CDN for the 3D rotating dotted globe -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
     <script>
         // Loader
         window.addEventListener('load', () => {
@@ -2204,117 +2196,7 @@
             });
         }
 
-        // 3D Globe Animation Logic for Footer
         document.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById('globe-container');
-            // Check if container exists and Three.js is loaded
-            if (!container || typeof THREE === 'undefined') return;
-
-            // Setup Scene
-            const scene = new THREE.Scene();
-
-            // Setup Camera
-            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-            camera.position.z = 16;
-
-            // Setup Renderer
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // optimize pixel ratio
-            container.appendChild(renderer.domElement);
-
-            // Create Globe Geometry (Points/Dots)
-            const pointsData = [];
-            const samples = 1200; // Number of dots for higher fidelity
-            const radius = 6;
-            const phi = Math.PI * (3 - Math.sqrt(5)); // Golden angle pattern
-
-            // Modern colors for the dots
-            const colors = [];
-            const color1 = new THREE.Color(0x0052FF); // Bright primary blue
-            const color2 = new THREE.Color(0x0A2540); // Deep navy blue
-            const color3 = new THREE.Color(0x00F0FF); // Cyber neon blue for accents
-
-            for (let i = 0; i < samples; i++) {
-                // Distribute points evenly on a sphere using Fibonacci spiral
-                const y = 1 - (i / (samples - 1)) * 2;
-                const r = Math.sqrt(1 - y * y);
-                const theta = phi * i;
-
-                const x = Math.cos(theta) * r;
-                const z = Math.sin(theta) * r;
-
-                pointsData.push(x * radius, y * radius, z * radius);
-
-                // Randomly assign colors to create texture
-                const rand = Math.random();
-                if (rand > 0.85) {
-                    colors.push(color3.r, color3.g, color3.b);
-                } else if (rand > 0.4) {
-                    colors.push(color1.r, color1.g, color1.b);
-                } else {
-                    colors.push(color2.r, color2.g, color2.b);
-                }
-            }
-
-            const geometry = new THREE.BufferGeometry();
-            geometry.setAttribute('position', new THREE.Float32BufferAttribute(pointsData, 3));
-            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-            // Point Material
-            const material = new THREE.PointsMaterial({
-                size: 0.12,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.85,
-                sizeAttenuation: true
-            });
-
-            const globe = new THREE.Points(geometry, material);
-
-            // Add realistic tilt (Earth's axis is ~23.5 degrees)
-            globe.rotation.x = 0.41;
-            scene.add(globe);
-
-            // Optional: Add inner glowing sphere
-            const innerGeo = new THREE.IcosahedronGeometry(radius * 0.95, 2);
-            const innerMat = new THREE.MeshBasicMaterial({
-                color: 0x0A2540,
-                transparent: true,
-                opacity: 0.05,
-                wireframe: true
-            });
-            const innerSphere = new THREE.Mesh(innerGeo, innerMat);
-            globe.add(innerSphere);
-
-            // Animation Loop Variables
-            const clock = new THREE.Clock();
-
-            function animate() {
-                requestAnimationFrame(animate);
-
-                const delta = clock.getDelta();
-                const time = clock.getElapsedTime();
-
-                // Rotate globe continuously
-                globe.rotation.y += 0.2 * delta;
-
-                // Add subtle floating effect mapping to time
-                globe.position.y = Math.sin(time * 0.8) * 0.15;
-
-                renderer.render(scene, camera);
-            }
-
-            animate();
-
-            // Handle Window Resize to keep aspect ratio perfect
-            window.addEventListener('resize', () => {
-                if (!container || container.clientWidth === 0) return;
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            });
-
             // --- Counter Animation ---
             if (typeof gsap !== 'undefined') {
                 const stats = document.querySelectorAll('.stat-num');
