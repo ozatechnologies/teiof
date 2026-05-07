@@ -306,7 +306,7 @@
 
         .brand-banner {
             position: fixed;
-            top: -35px;
+            top: 10px;
             right: 20px;
             z-index: 1100;
             display: block;
@@ -314,8 +314,9 @@
         }
 
         .main-logo-img {
-            height: 230px;
-            width: auto;
+            height: 120px;
+            width: auto !important;
+            max-width: none !important;
             object-fit: contain;
             filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.35));
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -328,19 +329,19 @@
 
         @media (max-width: 1199px) {
             .main-logo-img {
-                height: 175px;
+                height: 110px;
             }
         }
 
         @media (max-width: 991px) {
             .main-logo-img {
-                height: 130px;
+                height: 90px;
             }
         }
 
         @media (max-width: 576px) {
             .main-logo-img {
-                height: 100px;
+                height: 70px;
             }
         }
 
@@ -1178,9 +1179,13 @@
             font-size: 0.9rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 0.4rem;
+            margin-bottom: 1.8rem;
             position: relative;
             padding-bottom: 0.4rem;
+        }
+
+        .contact-title {
+            color: #ffffff !important;
         }
 
         .col-title::after {
@@ -1235,23 +1240,23 @@
         .contact-item {
             display: flex;
             gap: 0.6rem;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .contact-item:last-child {
+            margin-top: 1.2rem;
         }
 
         .contact-icon {
-            width: 30px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
             flex-shrink: 0;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-item:hover .contact-icon {
@@ -1416,6 +1421,27 @@
                 grid-row: span 1;
             }
         }
+
+        /* Circular Why Choose Us Section - Premium Agriculture Theme */
+        .why-choose-circular {
+            padding: 140px 0;
+            background: transparent;
+            position: relative;
+        }
+
+        .wcu-image-wrapper {
+            margin-top: 20px;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .wcu-image-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .wcu-image-wrapper img {
+            display: block;
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -1485,8 +1511,7 @@
                 </ul>
             </div>
             <a class="brand-banner" href="index.html">
-                <img src="https://i.ibb.co/9k92PRb6/Image-To-Stl-com-TEIOF-IMPEXcontainer-copy-1.png" alt="TEIOF Logo"
-                    class="main-logo-img">
+                <img src="logo.png" alt="TEIOF Logo" class="main-logo-img">
             </a>
         </div>
     </nav>
@@ -2017,41 +2042,22 @@
 
     <!-- Parallax -->
     <section class="parallax-container">
-        <div class="parallax-img" id="parallaxBg"
-            style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80');">
+        <div class="parallax-img" id="parallaxBg" style="background-image: url('bg1.jpg');">
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features-section">
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-circular" id="why-choose">
         <div class="container">
             <div class="section-header">
-                <p class="section-label gs-reveal">Why Choose Us</p>
-                <h2 class="section-title gs-reveal">Excellence in Every Detail</h2>
+                <p class="section-label gs-reveal">Our Process</p>
+                <h2 class="section-title gs-reveal">Why Choose TEIOF Impex?</h2>
             </div>
-            <div class="features-grid">
-                <div class="feature-card gs-reveal">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Quality Assurance</h3>
-                    <p>We prioritize quality at every step, from sourcing to packaging. Our products undergo rigorous
-                        quality checks to meet Impex standards.</p>
-                </div>
-                <div class="feature-card gs-reveal">
-                    <div class="feature-icon"><i class="fas fa-globe-americas"></i></div>
-                    <h3>Global Reach</h3>
-                    <p>We have established a robust global network to seamlessly deliver our agriculture products to
-                        your doorstep across continents.</p>
-                </div>
-                <div class="feature-card gs-reveal">
-                    <div class="feature-icon"><i class="fas fa-users"></i></div>
-                    <h3>Customer First</h3>
-                    <p>Your satisfaction is our priority. Our dedicated team is always ready to assist you with
-                        personalized service.</p>
-                </div>
+            <div class="wcu-image-wrapper gs-reveal" style="text-align: center; max-width: 1100px; margin: 0 auto;">
+                <img src="wcu.png" alt="Why Choose TEIOF Impex" style="width: 100%; height: auto; border: none !important; box-shadow: none !important; outline: none !important;">
             </div>
         </div>
     </section>
-
 
     <!-- Recognition Section -->
     <section class="recognition-section">
@@ -2118,26 +2124,29 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 class="col-title">Contact Us</h4>
+                <h4 class="col-title contact-title">Contact Us</h4>
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                     <div class="contact-text">
-                        <strong>Address</strong>
-                        <p>Sardar Patel Arcade, Canal Road, Morbi, Gujarat, India</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-text">
-                        <strong>Email</strong>
-                        <a href="mailto:export@teiof.com">export@teiof.com</a>
+                        <a href="https://wa.me/917435912528" target="_blank">+91 74359 12528</a>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
                     <div class="contact-text">
-                        <strong>Phone</strong>
                         <a href="tel:+917435912528">+91 74359 12528</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <a href="mailto:export@teiof.com">export@teiof.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <p>Sardar Patel Arcade, Canal Road, Morbi, Gujarat, India</p>
                     </div>
                 </div>
             </div>
@@ -2147,11 +2156,11 @@
                 <p>© 2024 <strong>TEIOF Impex</strong> All rights reserved.</p>
                 <div class="social-links">
                     <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="tel:+917435912528"><i class="fas fa-phone-alt"></i></a>
-                    <a href="sms:+917435912528"><i class="fas fa-comment-alt"></i></a>
-                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
                     <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
                     <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
