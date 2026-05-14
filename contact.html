@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us – TEIOF Impex Trade Pvt. Ltd.</title>
+    <link rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #0052FF;
+            --primary-light: #EBF2FF;
+            --primary-dark: #003ECC;
+            --primary-soft: rgba(0, 82, 255, 0.06);
+            --primary-glow: rgba(0, 82, 255, 0.15);
+            --accent: #00F0FF;
+            --navy: #0A2540;
+            --navy-light: #1E3A5F;
+            --text-main: #1A1D23;
+            --text-light: #64748B;
+            --text-muted: #94A3B8;
+            --white: #ffffff;
+            --bg-subtle: #F8FAFC;
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --font: 'Poppins', sans-serif;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 25px 60px -12px rgba(0, 0, 0, 0.1);
+            --shadow-blue: 0 20px 50px -12px rgba(0, 82, 255, 0.15);
+            --radius-lg: 32px;
+            --radius-md: 20px;
+            --radius-sm: 12px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--white);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        section {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========== LOADER ========== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--white);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            transition: opacity 0.8s var(--transition);
+        }
+
+        .t-globe-waves {
+            width: 160px;
+            height: 160px;
+        }
+
+        .t-globe-waves svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wave-1 {
+            animation: waveFlow 3s linear infinite;
+        }
+
+        .wave-2 {
+            animation: waveFlowRight 4s linear infinite;
+        }
+
+        @keyframes waveFlow {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-200px);
+            }
+        }
+
+        @keyframes waveFlowRight {
+            0% {
+                transform: translateX(-200px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .globe-spin-1 {
+            transform-origin: center;
+            animation: rotateGlobe1 4s linear infinite;
+        }
+
+        .globe-spin-2 {
+            transform-origin: center;
+            animation: rotateGlobe2 6s linear infinite;
+        }
+
+        .globe-dash {
+            transform-origin: center;
+            animation: spinDash 15s linear infinite;
+        }
+
+        @keyframes rotateGlobe1 {
+
+            0%,
+            100% {
+                transform: scaleX(1);
+            }
+
+            50% {
+                transform: scaleX(-1);
+            }
+        }
+
+        @keyframes rotateGlobe2 {
+
+            0%,
+            100% {
+                transform: rotate(20deg) scaleY(1);
+            }
+
+            50% {
+                transform: rotate(20deg) scaleY(-1);
+            }
+        }
+
+        @keyframes spinDash {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .letter-t-group {
+            animation: floatT 3s ease-in-out infinite;
+        }
+
+        @keyframes floatT {
+
+            0%,
+            100% {
+                transform: translate(100px, 92px);
+            }
+
+            50% {
+                transform: translate(100px, 102px);
+            }
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-progress {
+            position: absolute;
+            inset: 0;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.4s ease-out;
+        }
+
+        .loader-text {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--navy);
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 4px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar .container {
+            position: relative;
+        }
+
+        .navbar.scrolled {
+            padding: 2px 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-toggler-icon {
+                filter: invert(1) brightness(200%);
+            }
+
+            .navbar.scrolled .navbar-toggler-icon {
+                filter: none;
+            }
+
+            .navbar-toggler {
+                border-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .navbar.scrolled .navbar-toggler {
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-collapse {
+                background: #ffffff;
+                padding: 1rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                margin-top: 15px;
+            }
+
+            .navbar-collapse .nav-link {
+                color: #0A2540 !important;
+                padding: 12px 20px !important;
+                border-radius: 8px;
+            }
+
+            .navbar-collapse .nav-link:hover {
+                background: rgba(0, 82, 255, 0.05);
+                color: #0052FF !important;
+            }
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--text) !important;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-banner {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            z-index: 1100;
+            display: block;
+            text-decoration: none !important;
+        }
+
+        .main-logo-img {
+            height: 120px;
+            width: auto !important;
+            max-width: none !important;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.35));
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .brand-banner:hover .main-logo-img {
+            transform: scale(1.04) translateY(-3px);
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.22));
+        }
+
+        @media (max-width: 1199px) {
+            .main-logo-img {
+                height: 110px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .main-logo-img {
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-logo-img {
+                height: 70px;
+            }
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 8px 25px !important;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background: #ffffff;
+            transform: scaleX(0);
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        @media (min-width: 992px) {
+            .navbar:not(.scrolled) .nav-link {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            }
+
+            .navbar.scrolled .nav-link {
+                color: #0A2540 !important;
+                text-shadow: none;
+            }
+
+            .navbar.scrolled .nav-link::after {
+                background: #0052FF;
+            }
+        }
+
+        /* ========== PAGE HERO ========== */
+        .page-hero {
+            position: relative;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            background: var(--navy);
+            overflow: hidden;
+            color: var(--white);
+        }
+
+        .page-hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+            filter: contrast(1.1) saturate(0.7);
+            transition: transform 12s var(--transition);
+        }
+
+        .page-hero:hover .page-hero-img {
+            transform: scale(1.08);
+        }
+
+        /* Subtle hero grid overlay */
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 40px 40px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+            line-height: 0.9;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+
+        .breadcrumb-bar a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-bar a:hover {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        .breadcrumb-bar .sep {
+            opacity: 0.4;
+            font-size: 10px;
+        }
+
+        /* ========== CONTACT INFO CARDS ========== */
+        .contact-cards-section {
+            position: relative;
+            z-index: 10;
+            margin-top: -70px;
+            padding: 0 0 80px;
+        }
+
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+        }
+
+        .cinfo-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 18px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cinfo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cinfo-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cinfo-card::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(0, 82, 255, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .cinfo-card:hover::after {
+            opacity: 1;
+        }
+
+        .cinfo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-blue);
+            border-color: var(--primary-glow);
+        }
+
+        /* SVG Icon Container */
+        .cinfo-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            background: var(--primary-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .cinfo-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: var(--transition-fast);
+        }
+
+        .cinfo-card:hover .cinfo-icon {
+            background: var(--primary);
+            transform: rotate(-5deg) scale(1.08);
+        }
+
+        .cinfo-card:hover .cinfo-icon svg {
+            stroke: var(--white);
+        }
+
+        /* Pulse ring on icon hover */
+        .cinfo-card:hover .cinfo-icon::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 22px;
+            border: 1.5px solid var(--primary);
+            opacity: 0;
+            animation: iconPulseRing 0.7s ease-out;
+        }
+
+        @keyframes iconPulseRing {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
+
+        .cinfo-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cinfo-body h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cinfo-body p,
+        .cinfo-body a {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .cinfo-body a:hover {
+            color: var(--primary);
+        }
+
+        /* ========== CONTACT INTERACTIVE SECTION ========== */
+        .contact-interactive-section {
+            padding: 0 0 120px;
+            position: relative;
+        }
+
+        /* Subtle background grid */
+        .contact-interactive-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 82, 255, 0.02) 1px, transparent 0);
+            background-size: 48px 48px;
+            pointer-events: none;
+        }
+
+        .contact-interactive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Map Side */
+        .map-wrapper {
+            position: relative;
+            min-height: 580px;
+            background: var(--bg-subtle);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.15) contrast(1.05) saturate(0.9);
+            transition: filter 0.5s ease;
+        }
+
+        .map-wrapper:hover iframe {
+            filter: grayscale(0) contrast(1) saturate(1);
+        }
+
+        /* Map pin badge */
+        .map-badge {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--white);
+            padding: 12px 20px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 5;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .map-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22C55E;
+            animation: livePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes livePulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.7);
+            }
+        }
+
+        /* Form Side */
+        .form-wrapper {
+            background: var(--navy);
+            padding: 48px 44px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Dot pattern overlay */
+        .form-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Gradient glow in top-right */
+        .form-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(0, 82, 255, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .form-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 32px;
+        }
+
+        .form-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .form-label-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: livePulse 2s ease-in-out infinite;
+        }
+
+        .form-header h2 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .form-header p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+        }
+
+        .form-iframe-wrap {
+            position: relative;
+            z-index: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            flex: 1;
+            min-height: 700px;
+        }
+
+        .form-iframe-wrap iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 700px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+        }
+
+        /* ========== SECTION HEADER ========== */
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: 800;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 40px;
+            letter-spacing: -2px;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* ========== RECOGNITION ========== */
+        .recognition-section {
+            padding: 60px 0;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .recognition-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #0A2540;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .logo-marquee {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 60px;
+            position: relative;
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-track img {
+            height: 110px;
+            width: auto;
+            transition: all 0.4s ease;
+        }
+
+        .logo-track img.logo-fssai {
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-track img {
+                height: 80px;
+            }
+
+            .logo-track {
+                gap: 40px;
+            }
+        }
+
+        .logo-track img:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            position: relative;
+            background-color: #2A3132;
+            padding: 6rem 2rem 4rem;
+            z-index: 1;
+            overflow: hidden;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 100% 100%, rgba(0, 82, 255, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 0% 0%, rgba(10, 37, 64, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .site-footer::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('f2.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+            transform: scale(1.1);
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1.2fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo span {
+            color: #fff;
+        }
+
+        .about-text {
+            color: #fff;
+            line-height: 1.9;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .col-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.4rem;
+        }
+
+        .contact-title {
+            color: #ffffff !important;
+        }
+
+        .col-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a i {
+            font-size: 0.75rem;
+            color: #fff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .contact-item:last-child {
+            margin-top: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: #fff;
+            color: #2A3132;
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 0.85rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-text p,
+        .contact-text a {
+            color: #fff;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-text a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: #fff;
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom strong {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.75rem;
+        }
+
+        .social-links a:hover {
+            background: #fff;
+            color: #2A3132;
+            border-color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0, 82, 255, 0.2);
+        }
+
+        /* ========== FAB ========== */
+        #contact-fab {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+            font-family: var(--font);
+        }
+
+        #fab-menu {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .fab-link-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--navy);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 8px 30px rgba(0, 82, 255, 0.15);
+            border: 1px solid rgba(0, 82, 255, 0.1);
+            white-space: nowrap;
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .fab-link-item span.icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .fab-link-item:hover {
+            transform: translateX(0) scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 82, 255, 0.25);
+            color: var(--primary);
+        }
+
+        #fab-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 82, 255, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 28px;
+            box-shadow: 0 8px 32px 0 rgba(0, 82, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            outline: none;
+        }
+
+        #fab-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 12px 40px rgba(0, 82, 255, 0.25);
+        }
+
+        #contact-fab.active #fab-menu {
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+            pointer-events: all !important;
+        }
+
+        #contact-fab.active #fab-menu .fab-link-item {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+        }
+
+        #contact-fab.active #fab-icon {
+            transform: rotate(45deg);
+        }
+
+        .pulse-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 82, 255, 0.3);
+            animation: fabPulse 2s ease-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fabPulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* ========== MAILBOX DECORATION ========== */
+        .mailbox-decoration {
+            padding: 40px 0;
+            background: var(--white);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .mailbox-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        .mailbox-wrap:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        .thin-mailbox {
+            width: 80px;
+            height: auto;
+            filter: drop-shadow(0 4px 8px var(--primary-glow));
+        }
+
+        .thin-mailbox path {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawMailbox 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes drawMailbox {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .mailbox-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+
+        /* ========== GSAP ANIMATION STATES ========== */
+        .gs-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .cinfo-card {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .contact-interactive-grid {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1199px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .contact-interactive-grid {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .map-wrapper {
+                min-height: 350px;
+                width: 100%;
+            }
+
+            .form-wrapper {
+                padding: 36px 28px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .contact-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .cinfo-card {
+                padding: 32px 24px;
+            }
+
+            .navbar {
+                position: absolute !important;
+            }
+
+            .page-hero {
+                height: 400px;
+                padding-top: 100px;
+            }
+
+            .page-hero h1 {
+                font-size: clamp(2.5rem, 8vw, 3.5rem);
+                letter-spacing: -1px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .site-footer {
+                padding: 1rem 1rem 0.5rem;
+            }
+
+            .form-header h2 {
+                font-size: 26px;
+            }
+
+            .map-badge {
+                top: 16px;
+                left: 16px;
+                padding: 8px 14px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-cards-section {
+                margin-top: -50px;
+            }
+
+            .cinfo-card {
+                padding: 28px 20px;
+                gap: 18px;
+            }
+
+            .cinfo-icon {
+                width: 50px;
+                height: 50px;
+                border-radius: 14px;
+            }
+
+            .cinfo-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .form-wrapper {
+                padding: 28px 20px;
+            }
+
+            .form-iframe-wrap {
+                min-height: 700px;
+            }
+
+            .form-iframe-wrap iframe {
+                min-height: 700px;
+            }
+
+            #contact-fab {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            #fab-toggle {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="t-globe-waves">
+            <svg viewBox="0 0 200 200" width="140" height="140">
+                <g opacity="0.6">
+                    <path class="wave-1"
+                        d="M -200 130 Q -150 100,-100 130 T 0 130 T 100 130 T 200 130 T 300 130 T 400 130"
+                        stroke="#0052FF" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    <path class="wave-2"
+                        d="M -200 145 Q -150 175,-100 145 T 0 145 T 100 145 T 200 145 T 300 145 T 400 145"
+                        stroke="#00F0FF" stroke-width="2" fill="none" stroke-linecap="round" />
+                </g>
+                <g transform="translate(100,100)">
+                    <circle r="46" fill="none" stroke="#0A2540" stroke-width="1.5" stroke-opacity="0.15" />
+                    <circle r="46" fill="none" stroke="#0052FF" stroke-width="1" stroke-dasharray="4 4"
+                        class="globe-dash" />
+                    <g class="globe-spin-1">
+                        <ellipse rx="22" ry="46" fill="none" stroke="#0052FF" stroke-width="1.2" stroke-opacity="0.5" />
+                    </g>
+                    <g class="globe-spin-2">
+                        <ellipse rx="46" ry="22" fill="none" stroke="#0052FF" stroke-width="1.2" stroke-opacity="0.5" />
+                    </g>
+                </g>
+                <g class="letter-t-group" transform="translate(100,95)">
+                    <path d="M -16 -16 L 16 -16 M 0 -16 L 0 20" stroke="#0A2540" stroke-width="4.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="0" cy="30" r="3.5" fill="#00F0FF" />
+                </g>
+            </svg>
+        </div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-text">TEIOF Impex</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler ms-auto order-1" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end order-3 order-lg-1" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a class="brand-banner" href="index.html">
+                <img src="logo.png" alt="TEIOF Logo" class="main-logo-img">
+            </a>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <img class="page-hero-img" src="bg1.jpg" alt="Agriculture background" loading="eager">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Contact Us</h1>
+                <div class="breadcrumb-bar gs-reveal">
+                    <a href="index.html">Home</a>
+                    <span class="sep">/</span>
+                    <span>Contact Us</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT INFO CARDS -->
+    <section class="contact-cards-section">
+        <div class="container">
+            <div class="contact-cards-grid">
+
+                <!-- Location Card -->
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div class="cinfo-body">
+                        <h3>Our Location</h3>
+                        <p>Sardar Patel Arcade, Canal Road,<br>Morbi, Gujarat, India</p>
+                    </div>
+                </div>
+
+                <!-- Phone Card -->
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </div>
+                    <div class="cinfo-body">
+                        <h3>Phone Number</h3>
+                        <p><a href="tel:+917435912528">+91 74359 12528</a><br><a href="tel:+917435912528">+91 74359
+                                12528</a></p>
+                    </div>
+                </div>
+
+                <!-- Email Card -->
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <polyline points="22,4 12,13 2,4" />
+                        </svg>
+                    </div>
+                    <div class="cinfo-body">
+                        <h3>Email Address</h3>
+                        <p><a href="mailto:export@teiof.com">export@teiof.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Google Business Card -->
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18"></path>
+                            <path d="M3 7l1 4h16l1-4h-18z"></path>
+                            <path d="M5 21V11"></path>
+                            <path d="M19 21V11"></path>
+                            <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path>
+                        </svg>
+                    </div>
+                    <div class="cinfo-body">
+                        <h3>Google Profile</h3>
+                        <p><a href="https://local.google.com/place?placeid=ChIJbbqOQWSE9yARuusc0QVXU4U" target="_blank">View on Google</a></p>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.2h.5"></path>
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cinfo-body">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/917435912528" target="_blank">Chat With Us</a></p>
+                    </div>
+                </div>
+
+                <!-- Global Export Card -->
+                <div class="cinfo-card">
+                    <div class="cinfo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <div class="cinfo-body">
+                        <h3>Global Reach</h3>
+                        <p>20+ Countries</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP & FORM -->
+    <section class="contact-interactive-section">
+        <div class="container">
+            <div class="contact-interactive-grid">
+
+                <!-- Map -->
+                <div class="map-wrapper">
+                    <div class="map-badge">
+                        <span class="map-badge-dot"></span>
+                        TEIOF IMPEX HQ
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.6930913182678!2d70.83050601408937!3d22.79426495708797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x20f78464418eba6d%3A0x85535705d11cebba!2sTEIOF%20IMPEX!5e1!3m2!1sen!2sin!4v1778331751105!5m2!1sen!2sin"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="TEIOF Impex Location"></iframe>
+                </div>
+
+                <!-- Form -->
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <div class="form-label">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.2" style="margin-right: 8px;" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 6H17.2C18.8802 6 19.7202 6 20.362 6.32698C20.9265 6.6146 21.3854 7.07354 21.673 7.63803C22 8.27976 22 9.11984 22 10.8V18H11M7 6C9.20914 6 11 7.79086 11 10V18M7 6C4.79086 6 3 7.79086 3 10V18H11M17 3H14V12M10 18V21H14V18M7 12H7.01"/>
+                            </svg>
+                            Get in Touch
+                        </div>
+                        <h2>Have a Question?</h2>
+                        <p>Drop us a message. We're here to assist with product details, pricing, packaging, and global
+                            shipping support.</p>
+                    </div>
+                    <div class="form-iframe-wrap">
+                        <iframe src='https://app.youform.com/forms/xg9vnlsb' loading='lazy'
+                            title="Contact Form"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAILBOX DECORATION -->
+    <section class="mailbox-decoration">
+        <div class="container text-center">
+            <div class="mailbox-wrap gs-reveal">
+                <svg viewBox="0 0 24 24" class="thin-mailbox">
+                    <path d="M7 6H17.2C18.8802 6 19.7202 6 20.362 6.32698C20.9265 6.6146 21.3854 7.07354 21.673 7.63803C22 8.27976 22 9.11984 22 10.8V18H11M7 6C9.20914 6 11 7.79086 11 10V18M7 6C4.79086 6 3 7.79086 3 10V18H11M17 3H14V12M10 18V21H14V18M7 12H7.01" fill="none" stroke="var(--primary)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="mailbox-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="recognition-section">
+        <div class="container">
+            <h2 class="recognition-title gs-reveal">Recognition</h2>
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <img src="https://static.wixstatic.com/media/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png"
+                        alt="Spice Board">
+                    <img src="https://static.wixstatic.com/media/28a759_fb2ae5c7634c4be7a07db3570e898819~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_fb2ae5c7634c4be7a07db3570e898819~mv2.png"
+                        alt="IOPEPC">
+                    <img src="https://static.wixstatic.com/media/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png"
+                        alt="FIEO">
+                    <img src="https://static.wixstatic.com/media/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png"
+                        alt="APEDA">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/FSSAI_logo.png" alt="FSSAI"
+                        class="logo-fssai">
+                    <!-- Duplicate for seamless scroll -->
+                    <img src="https://static.wixstatic.com/media/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_c74738be784846ce8d22ad6d9b93bb41~mv2.png"
+                        alt="Spice Board">
+                    <img src="https://static.wixstatic.com/media/28a759_fb2ae5c7634c4be7a07db3570e898819~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_fb2ae5c7634c4be7a07db3570e898819~mv2.png"
+                        alt="IOPEPC">
+                    <img src="https://static.wixstatic.com/media/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_bfbd94a66e9d404689455a39b8226eca~mv2.png"
+                        alt="FIEO">
+                    <img src="https://static.wixstatic.com/media/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png/v1/fill/w_214,h_214,al_c,lg_1,q_85,enc_avif,quality_auto/28a759_74890d68cf7846969ef0f51eea3f1876~mv2.png"
+                        alt="APEDA">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/FSSAI_logo.png" alt="FSSAI"
+                        class="logo-fssai">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="tlogo.png" alt="TEIOF Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                    TEIOF <span>IMPEX</span>
+                </div>
+                <p class="about-text">Harvested by hands that know the land, TEIOF Impex delivers premium agro-based
+                    products to global markets with a commitment to quality, reliability, and trusted expertise.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="col-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="product.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="col-title contact-title">Contact Us</h4>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="contact-text">
+                        <a href="https://wa.me/917435912528" target="_blank">+91 74359 12528</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text">
+                        <a href="tel:+917435912528">+91 74359 12528</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <a href="mailto:export@teiof.com">export@teiof.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <p>Sardar Patel Arcade, Canal Road, Morbi, Gujarat, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 <strong>TEIOF IMPEX</strong> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div id="contact-fab">
+        <div id="fab-menu">
+            <a href="mailto:export@teiof.com" class="fab-link-item">
+                <span class="icon" style="background: linear-gradient(135deg, #0052FF, #003ECC);"><i
+                        class="fas fa-envelope"></i></span>
+                Email Us
+            </a>
+            <a href="https://wa.me/917435912528" target="_blank" class="fab-link-item">
+                <span class="icon" style="background: linear-gradient(135deg, #25D366, #128C7E);"><i
+                        class="fab fa-whatsapp"></i></span>
+                WhatsApp
+            </a>
+        </div>
+        <button id="fab-toggle">
+            <i class="fas fa-comment-dots" id="fab-icon" style="transition: transform 0.3s ease;"></i>
+            <span class="pulse-ring"></span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ===== LOADER =====
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                const progress = document.querySelector('.loader-progress');
+                if (progress) progress.style.width = '100%';
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.remove(), 500);
+                }, 500);
+            }
+        });
+
+        // ===== NAVBAR SCROLL =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                if (window.scrollY > 100) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // ===== FAB TOGGLE =====
+            const fab = document.getElementById('contact-fab');
+            const fabBtn = document.getElementById('fab-toggle');
+            let fabOpen = false;
+
+            if (fabBtn && fab) {
+                fabBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    fabOpen = !fabOpen;
+                    fab.classList.toggle('active', fabOpen);
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (fabOpen && !fab.contains(e.target)) {
+                        fabOpen = false;
+                        fab.classList.remove('active');
+                    }
+                });
+            }
+
+            // ===== GSAP ANIMATIONS =====
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Hero breadcrumb
+                gsap.utils.toArray('.gs-reveal').forEach(elem => {
+                    gsap.fromTo(elem,
+                        { y: 30, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: elem, start: 'top 85%', once: true },
+                            y: 0, opacity: 1, duration: 0.8, ease: 'power3.out'
+                        }
+                    );
+                });
+
+                // Contact cards stagger
+                const cinfoCards = document.querySelectorAll('.cinfo-card');
+                if (cinfoCards.length) {
+                    gsap.to(cinfoCards, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.7,
+                        stagger: 0.12,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.contact-cards-grid',
+                            start: 'top 80%',
+                            once: true
+                        }
+                    });
+                }
+
+                // Map + Form section
+                const interactiveGrid = document.querySelector('.contact-interactive-grid');
+                if (interactiveGrid) {
+                    gsap.to(interactiveGrid, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.9,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: interactiveGrid,
+                            start: 'top 80%',
+                            once: true
+                        }
+                    });
+                }
+
+                // Form header children stagger
+                const formHeader = document.querySelector('.form-header');
+                if (formHeader) {
+                    gsap.fromTo(formHeader.children,
+                        { y: 20, opacity: 0 },
+                        {
+                            scrollTrigger: {
+                                trigger: formHeader,
+                                start: 'top 85%',
+                                once: true
+                            },
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.6,
+                            stagger: 0.1,
+                            ease: 'power3.out'
+                        }
+                    );
+                }
+
+                // Magnetic FAB effect
+                if (fabBtn) {
+                    fabBtn.addEventListener('mousemove', (e) => {
+                        const rect = fabBtn.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        gsap.to(fabBtn, {
+                            x: x * 0.35,
+                            y: y * 0.35,
+                            duration: 0.3,
+                            ease: 'power2.out'
+                        });
+                    });
+                    fabBtn.addEventListener('mouseleave', () => {
+                        gsap.to(fabBtn, {
+                            x: 0,
+                            y: 0,
+                            duration: 0.5,
+                            ease: 'elastic.out(1, 0.3)'
+                        });
+                    });
+                }
+
+                // Recognition marquee reveal
+                const recognitionTitle = document.querySelector('.recognition-title');
+                if (recognitionTitle) {
+                    gsap.fromTo(recognitionTitle,
+                        { y: 20, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: recognitionTitle, start: 'top 90%', once: true },
+                            y: 0, opacity: 1, duration: 0.6, ease: 'power3.out'
+                        }
+                    );
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
