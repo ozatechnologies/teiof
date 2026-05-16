@@ -1145,7 +1145,6 @@
         .recognition-section {
             padding: 60px 0;
             background: var(--white);
-            border-top: 1px solid #eee;
             overflow: hidden;
         }
 
@@ -1219,11 +1218,11 @@
         .site-footer {
             position: relative;
             background-color: #2A3132;
-            border-top: 4px solid #0052FF;
-            padding: 1.5rem 2rem 0.75rem;
+            padding: 6rem 2rem 4rem;
             z-index: 1;
             overflow: hidden;
             color: #fff;
+            font-weight: bold;
         }
 
         .site-footer::before {
@@ -1247,18 +1246,17 @@
             background-position: center center;
             background-repeat: no-repeat;
             opacity: 0.15;
-            /* Low opacity for subtle background */
             z-index: 0;
             pointer-events: none;
-            transform: scaleX(1.2) scaleY(1);
+            transform: scale(1.1);
         }
 
         .footer-container {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-            gap: 1.5rem;
+            grid-template-columns: 1.8fr 1fr 1.2fr;
+            gap: 4rem;
             position: relative;
             z-index: 2;
         }
@@ -1280,9 +1278,10 @@
 
         .about-text {
             color: #fff;
-            line-height: 1.6;
+            line-height: 1.9;
             margin-bottom: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
         }
 
         .col-title {
@@ -1315,7 +1314,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .footer-links a {
@@ -1399,8 +1398,8 @@
 
         .footer-bottom {
             max-width: 1280px;
-            margin: 0.75rem auto 0;
-            padding-top: 0.75rem;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
             border-top: 1px solid #fff;
             position: relative;
             z-index: 2;
@@ -1408,7 +1407,7 @@
 
         .footer-bottom-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -1424,6 +1423,7 @@
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
@@ -1736,7 +1736,7 @@
             }
 
             .site-footer {
-                padding: 1.5rem 1rem 1rem;
+                padding: 1rem 1rem 0.5rem;
             }
         }
 
@@ -1812,7 +1812,8 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <button class="navbar-toggler ms-auto order-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler ms-auto order-1" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end order-3 order-lg-1" id="navbarNav">
@@ -2146,15 +2147,22 @@
         <div class="footer-container">
             <div class="footer-col brand-col">
                 <div class="footer-logo">
-                    <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="25" y="20" width="30" height="80" fill="#fff" />
-                        <path d="M 20 60 Q 50 50 80 60" stroke="#fff" stroke-width="8" fill="none" />
-                        <circle cx="80" cy="60" r="15" stroke="#fff" stroke-width="3" fill="none" />
-                    </svg>
-                    TEIOF <span>Impex</span>
+                    <img src="tlogo.png" alt="TEIOF Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                    TEIOF <span>IMPEX</span>
                 </div>
-                <p class="about-text">TEIOF Impex is a global source of premium agro-based products. Quality,
-                    affordability, and expertise define our commitment to excellence.</p>
+                <p class="about-text">Harvested by hands that know the land, TEIOF Impex delivers premium agro-based
+                    products to global markets with a commitment to quality, reliability, and trusted expertise.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4 class="col-title">Quick Links</h4>
@@ -2163,16 +2171,6 @@
                     <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     <li><a href="product.html"><i class="fas fa-chevron-right"></i> Products</a></li>
                     <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4 class="col-title">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Spices</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Oil & Seeds</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Raisins</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pulses</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Animal Feeds</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -2205,16 +2203,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>© 2024 <strong>TEIOF Impex</strong> All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+                <p>© 2024 <strong>TEIOF IMPEX</strong> All rights reserved.</p>
             </div>
         </div>
     </footer>

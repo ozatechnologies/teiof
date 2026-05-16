@@ -466,19 +466,17 @@
         .contact-cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 24px;
         }
 
         .cinfo-card {
             background: var(--white);
-            padding: 30px 20px;
-            border-radius: 24px;
+            padding: 40px 32px;
+            border-radius: var(--radius-lg);
             border: 1px solid var(--border);
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 18px;
+            align-items: flex-start;
+            gap: 24px;
             position: relative;
             overflow: hidden;
             transition: var(--transition);
@@ -639,10 +637,10 @@
             z-index: 1;
         }
 
+        /* Map Side */
         .map-wrapper {
             position: relative;
-            min-height: 600px;
-            height: 100%;
+            min-height: 580px;
             background: var(--bg-subtle);
         }
 
@@ -781,13 +779,13 @@
             border-radius: 16px;
             overflow: hidden;
             flex: 1;
-            min-height: 700px;
+            min-height: 420px;
         }
 
         .form-iframe-wrap iframe {
             width: 100%;
             height: 100%;
-            min-height: 700px;
+            min-height: 420px;
             border: none;
             border-radius: 16px;
             background: transparent;
@@ -1249,47 +1247,453 @@
             }
         }
 
-        /* ========== MAILBOX DECORATION ========== */
-        .mailbox-decoration {
-            padding: 40px 0;
-            background: var(--white);
-            border-top: 1px solid var(--border-light);
-        }
-
-        .mailbox-wrap {
+        /* ========== HERO FLOATING ICONS ========== */
+        .hero-floating-icons {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
             display: flex;
             flex-direction: column;
+            gap: 30px;
+            pointer-events: none;
+        }
+
+        .hero-float-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
             align-items: center;
-            gap: 15px;
-            opacity: 0.6;
+            justify-content: center;
+            animation: floatBounce 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        .hero-float-icon:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-float-icon:nth-child(2) {
+            animation-delay: 0.5s;
+            margin-left: 40px;
+        }
+
+        .hero-float-icon:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .hero-float-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: rgba(255, 255, 255, 0.7);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hero-float-icon::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+
+        .hero-float-icon:nth-child(1)::after {
+            animation-delay: 0s;
+        }
+
+        .hero-float-icon:nth-child(2)::after {
+            animation-delay: 0.5s;
+        }
+
+        .hero-float-icon:nth-child(3)::after {
+            animation-delay: 1s;
+        }
+
+        @keyframes floatBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(2deg);
+            }
+
+            75% {
+                transform: translateY(6px) rotate(-1deg);
+            }
+        }
+
+        @keyframes ringPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+
+        /* ========== HERO ANIMATED ORB ========== */
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-orb-1 {
+            width: 300px;
+            height: 300px;
+            top: -80px;
+            right: -60px;
+            background: radial-gradient(circle, rgba(0, 82, 255, 0.15) 0%, transparent 70%);
+            animation: orbFloat1 8s ease-in-out infinite;
+        }
+
+        .hero-orb-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -40px;
+            left: 10%;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+            animation: orbFloat2 10s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat1 {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(-20px, 15px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(10px, -10px) scale(0.95);
+            }
+        }
+
+        @keyframes orbFloat2 {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(25px, -15px) scale(1.08);
+            }
+        }
+
+        /* ========== CARD CONNECTOR NEEDLES ========== */
+        .cards-connector {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            z-index: 0;
+            pointer-events: none;
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .cards-connector {
+                display: block;
+            }
+        }
+
+        .cards-connector-line {
+            position: absolute;
+            top: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.12;
+            animation: lineShimmer 4s ease-in-out infinite;
+            transform-origin: left center;
+            transform: scaleX(0);
+        }
+
+        .cards-connector-line.animated {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: scaleX(1);
+        }
+
+        .cards-connector-line:nth-child(1) {
+            left: 15%;
+            right: 55%;
+            animation-delay: 0s;
+        }
+
+        .cards-connector-line:nth-child(2) {
+            left: 48%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        @keyframes lineShimmer {
+
+            0%,
+            100% {
+                opacity: 0.08;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        /* Card connector dots */
+        .cards-connector-dot {
+            position: absolute;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .cards-connector-dot.animated {
+            opacity: 0.2;
+            transform: translate(-50%, -50%) scale(1);
+            animation: dotPulse 3s ease-in-out infinite;
+        }
+
+        .cards-connector-dot:nth-child(3) {
+            left: 33%;
+            animation-delay: 0.5s;
+        }
+
+        .cards-connector-dot:nth-child(4) {
+            left: 66%;
+            animation-delay: 1s;
+        }
+
+        @keyframes dotPulse {
+
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+        }
+
+        /* ========== ANIMATED BG SHAPES ========== */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-shape-1 {
+            width: 400px;
+            height: 400px;
+            top: 200px;
+            right: -150px;
+            background: radial-gradient(circle, rgba(0, 82, 255, 0.03) 0%, transparent 70%);
+            animation: orbFloat1 12s ease-in-out infinite;
+        }
+
+        .bg-shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 100px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(10, 37, 64, 0.03) 0%, transparent 70%);
+            animation: orbFloat2 14s ease-in-out infinite;
+        }
+
+        /* ========== CARD NUMBER BADGE ========== */
+        .cinfo-num {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(0, 82, 255, 0.04);
+            line-height: 1;
+            letter-spacing: -2px;
+            pointer-events: none;
             transition: var(--transition);
         }
 
-        .mailbox-wrap:hover {
-            opacity: 1;
-            transform: translateY(-5px);
+        .cinfo-card:hover .cinfo-num {
+            color: rgba(0, 82, 255, 0.08);
+            transform: scale(1.1) translateY(-3px);
         }
 
-        .thin-mailbox {
-            width: 80px;
-            height: auto;
-            filter: drop-shadow(0 4px 8px var(--primary-glow));
+        /* ========== FORM SIDE ANIMATED ELEMENTS ========== */
+        .form-glow-ring {
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(0, 82, 255, 0.08);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            animation: glowRingSpin 20s linear infinite;
         }
 
-        .thin-mailbox path {
-            stroke-dasharray: 300;
-            stroke-dashoffset: 300;
-            animation: drawMailbox 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        /* Glow ring inner accent */
+        .form-glow-ring::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.3;
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px rgba(0, 82, 255, 0.4);
         }
 
-        @keyframes drawMailbox {
-            to { stroke-dashoffset: 0; }
+        @keyframes glowRingSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
-        .mailbox-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--primary), transparent);
+        /* Form floating cross marks */
+        .form-deco-cross {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .form-deco-cross::before,
+        .form-deco-cross::after {
+            content: '';
+            position: absolute;
+            background: var(--white);
+            border-radius: 2px;
+        }
+
+        .form-deco-cross::before {
+            width: 2px;
+            height: 16px;
+            top: -8px;
+            left: -1px;
+        }
+
+        .form-deco-cross::after {
+            width: 16px;
+            height: 2px;
+            top: -1px;
+            left: -8px;
+        }
+
+        .form-deco-cross:nth-child(1) {
+            top: 80px;
+            right: 40px;
+            animation: floatBounce 5s ease-in-out infinite;
+        }
+
+        .form-deco-cross:nth-child(2) {
+            bottom: 120px;
+            right: 80px;
+            animation: floatBounce 6s ease-in-out infinite 1s;
+        }
+
+        /* ========== SVG ICON DRAW ANIMATION ========== */
+        .cinfo-icon svg .icon-draw {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 0;
+        }
+
+        .cinfo-card:hover .cinfo-icon svg .icon-draw {
+            animation: iconRedraw 0.8s ease forwards;
+        }
+
+        @keyframes iconRedraw {
+            0% {
+                stroke-dashoffset: 60;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* ========== MAP PIN BOUNCE ========== */
+        .map-badge-pin {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 2px;
+            animation: pinBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes pinBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            20% {
+                transform: translateY(-4px);
+            }
+
+            40% {
+                transform: translateY(0);
+            }
+
+            60% {
+                transform: translateY(-2px);
+            }
+
+            80% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== SCROLL PROGRESS BAR ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 10000;
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 0 2px 2px 0;
         }
 
         /* ========== GSAP ANIMATION STATES ========== */
@@ -1308,6 +1712,45 @@
             transform: translateY(40px);
         }
 
+        /* ========== CARD 3D TILT ========== */
+        .cinfo-card-tilt {
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+
+        /* ========== HERO RESPONSIVE ========== */
+        @media (max-width: 991px) {
+            .hero-floating-icons {
+                right: 20px;
+                gap: 20px;
+            }
+
+            .hero-float-icon {
+                width: 56px;
+                height: 56px;
+            }
+
+            .hero-float-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .hero-float-icon:nth-child(2) {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-floating-icons {
+                display: none;
+            }
+
+            .hero-orb-1,
+            .hero-orb-2 {
+                display: none;
+            }
+        }
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1199px) {
             .footer-container {
@@ -1318,19 +1761,15 @@
 
         @media (max-width: 1024px) {
             .contact-interactive-grid {
-                display: flex;
-                flex-direction: column-reverse;
+                grid-template-columns: 1fr;
             }
 
             .map-wrapper {
-                min-height: auto;
-                aspect-ratio: 4 / 3;
-                width: 100%;
+                min-height: 350px;
             }
 
             .form-wrapper {
                 padding: 36px 28px;
-                width: 100%;
             }
         }
 
@@ -1413,11 +1852,11 @@
             }
 
             .form-iframe-wrap {
-                min-height: 700px;
+                min-height: 380px;
             }
 
             .form-iframe-wrap iframe {
-                min-height: 700px;
+                min-height: 380px;
             }
 
             #contact-fab {
@@ -1446,6 +1885,9 @@
 </head>
 
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- LOADER -->
     <div id="loader">
@@ -1507,11 +1949,35 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero">
-        <img class="page-hero-img" src="bg1.jpg" alt="Agriculture background" loading="eager">
+        <img class="page-hero-img" id="heroImg" src="bg1.jpg" alt="Agriculture background" loading="eager">
+        <!-- Animated Orbs -->
+        <div class="hero-orb hero-orb-1" id="heroOrb1"></div>
+        <div class="hero-orb hero-orb-2" id="heroOrb2"></div>
+        <!-- Floating Contact Icons -->
+        <div class="hero-floating-icons" id="heroFloatIcons">
+            <div class="hero-float-icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <polyline points="22,4 12,13 2,4" />
+                </svg>
+            </div>
+            <div class="hero-float-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.32 1.14.72 2.24 1.2 3.28a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.04.48 2.14.88 3.28 1.2A2 2 0 0 1 22 16.92z" />
+                </svg>
+            </div>
+            <div class="hero-float-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+            </div>
+        </div>
         <div class="container">
             <div class="page-hero-content">
-                <h1>Contact Us</h1>
-                <div class="breadcrumb-bar gs-reveal">
+                <h1 id="heroTitle">Contact Us</h1>
+                <div class="breadcrumb-bar gs-reveal" id="heroBreadcrumb">
                     <a href="index.html">Home</a>
                     <span class="sep">/</span>
                     <span>Contact Us</span>
@@ -1522,15 +1988,26 @@
 
     <!-- CONTACT INFO CARDS -->
     <section class="contact-cards-section">
+        <!-- Background Shapes -->
+        <div class="bg-shape bg-shape-1" id="bgShape1"></div>
+        <div class="bg-shape bg-shape-2" id="bgShape2"></div>
         <div class="container">
-            <div class="contact-cards-grid">
+            <div class="contact-cards-grid" style="position: relative;">
+                <!-- Connector Needles -->
+                <div class="cards-connector" id="cardsConnector">
+                    <div class="cards-connector-line" id="connLine1"></div>
+                    <div class="cards-connector-line" id="connLine2"></div>
+                    <div class="cards-connector-dot" id="connDot1"></div>
+                    <div class="cards-connector-dot" id="connDot2"></div>
+                </div>
 
                 <!-- Location Card -->
-                <div class="cinfo-card">
+                <div class="cinfo-card" data-tilt>
+                    <span class="cinfo-num">01</span>
                     <div class="cinfo-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
+                            <path class="icon-draw" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle class="icon-draw" cx="12" cy="10" r="3" />
                         </svg>
                     </div>
                     <div class="cinfo-body">
@@ -1540,11 +2017,12 @@
                 </div>
 
                 <!-- Phone Card -->
-                <div class="cinfo-card">
+                <div class="cinfo-card" data-tilt>
+                    <span class="cinfo-num">02</span>
                     <div class="cinfo-icon">
                         <svg viewBox="0 0 24 24">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            <path class="icon-draw"
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.32 1.14.72 2.24 1.2 3.28a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.04.48 2.14.88 3.28 1.2A2 2 0 0 1 22 16.92z" />
                         </svg>
                     </div>
                     <div class="cinfo-body">
@@ -1555,11 +2033,12 @@
                 </div>
 
                 <!-- Email Card -->
-                <div class="cinfo-card">
+                <div class="cinfo-card" data-tilt>
+                    <span class="cinfo-num">03</span>
                     <div class="cinfo-icon">
                         <svg viewBox="0 0 24 24">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <polyline points="22,4 12,13 2,4" />
+                            <rect class="icon-draw" x="2" y="4" width="20" height="16" rx="2" />
+                            <polyline class="icon-draw" points="22,4 12,13 2,4" />
                         </svg>
                     </div>
                     <div class="cinfo-body">
@@ -1578,17 +2057,33 @@
             <div class="contact-interactive-grid">
 
                 <!-- Map -->
-                <div class="map-wrapper" style="overflow: hidden; touch-action: pan-x pan-y;">
-                    <iframe src="https://www.google.com/maps?q=Morbi,Gujarat&output=embed&z=11" style="width:100%; height:100%; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-wrapper" id="mapWrapper">
+                    <div class="map-badge">
+                        <span class="map-badge-pin">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0052FF"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </span>
+                        <span class="map-badge-dot"></span>
+                        TEIOF IMPEX HQ
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.6930913182678!2d70.83050601408937!3d22.79426495708797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x20f78464418eba6d%3A0x85535705d11cebba!2sTEIOF%20IMPEX!5e1!3m2!1sen!2sin!4v1778331751105!5m2!1sen!2sin"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="TEIOF Impex Location"></iframe>
                 </div>
 
                 <!-- Form -->
-                <div class="form-wrapper">
+                <div class="form-wrapper" id="formWrapper">
+                    <!-- Decorative Elements -->
+                    <div class="form-deco-cross"></div>
+                    <div class="form-deco-cross"></div>
+                    <div class="form-glow-ring" id="formGlowRing"></div>
                     <div class="form-header">
                         <div class="form-label">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.2" style="margin-right: 8px;" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M7 6H17.2C18.8802 6 19.7202 6 20.362 6.32698C20.9265 6.6146 21.3854 7.07354 21.673 7.63803C22 8.27976 22 9.11984 22 10.8V18H11M7 6C9.20914 6 11 7.79086 11 10V18M7 6C4.79086 6 3 7.79086 3 10V18H11M17 3H14V12M10 18V21H14V18M7 12H7.01"/>
-                            </svg>
+                            <span class="form-label-dot"></span>
                             Get in Touch
                         </div>
                         <h2>Have a Question?</h2>
@@ -1601,18 +2096,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- MAILBOX DECORATION -->
-    <section class="mailbox-decoration">
-        <div class="container text-center">
-            <div class="mailbox-wrap gs-reveal">
-                <svg viewBox="0 0 24 24" class="thin-mailbox">
-                    <path d="M7 6H17.2C18.8802 6 19.7202 6 20.362 6.32698C20.9265 6.6146 21.3854 7.07354 21.673 7.63803C22 8.27976 22 9.11984 22 10.8V18H11M7 6C9.20914 6 11 7.79086 11 10V18M7 6C4.79086 6 3 7.79086 3 10V18H11M17 3H14V12M10 18V21H14V18M7 12H7.01" fill="none" stroke="var(--primary)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="mailbox-line"></div>
             </div>
         </div>
     </section>
@@ -1668,7 +2151,6 @@
                     <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
                             class="fab fa-instagram"></i></a>
                     <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1760,6 +2242,17 @@
             }
         });
 
+        // ===== SCROLL PROGRESS BAR =====
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", () => {
             // ===== FAB TOGGLE =====
             const fab = document.getElementById('contact-fab');
@@ -1785,7 +2278,101 @@
             if (typeof gsap !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Hero breadcrumb
+                // ---- 1. HERO CONTENT ENTRANCE ----
+                const heroTitle = document.getElementById('heroTitle');
+                const heroBreadcrumb = document.getElementById('heroBreadcrumb');
+
+                if (heroTitle) {
+                    gsap.fromTo(heroTitle,
+                        { scale: 0.85, opacity: 0, y: 40 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            y: 0,
+                            duration: 1.2,
+                            ease: 'power4.out',
+                            delay: 0.3
+                        }
+                    );
+                }
+
+                if (heroBreadcrumb) {
+                    gsap.fromTo(heroBreadcrumb,
+                        { x: -60, opacity: 0 },
+                        {
+                            x: 0,
+                            opacity: 0.7,
+                            duration: 0.9,
+                            ease: 'power3.out',
+                            delay: 0.6
+                        }
+                    );
+                }
+
+                // ---- 2. HERO FLOATING ICONS ENTRANCE ----
+                const heroFloatIcons = document.querySelectorAll('.hero-float-icon');
+                if (heroFloatIcons.length) {
+                    gsap.fromTo(heroFloatIcons,
+                        { scale: 0, opacity: 0, y: 30 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.7,
+                            stagger: 0.15,
+                            ease: 'back.out(1.7)',
+                            delay: 0.8
+                        }
+                    );
+                }
+
+                // ---- 3. HERO PARALLAX ON SCROLL ----
+                const heroImg = document.getElementById('heroImg');
+                const heroOrb1 = document.getElementById('heroOrb1');
+                const heroOrb2 = document.getElementById('heroOrb2');
+
+                if (heroImg) {
+                    gsap.to(heroImg, {
+                        y: 80,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.page-hero',
+                            start: 'top top',
+                            end: 'bottom top',
+                            scrub: 1
+                        }
+                    });
+                }
+
+                if (heroOrb1) {
+                    gsap.to(heroOrb1, {
+                        y: -50,
+                        x: 20,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.page-hero',
+                            start: 'top top',
+                            end: 'bottom top',
+                            scrub: 1.5
+                        }
+                    });
+                }
+
+                if (heroOrb2) {
+                    gsap.to(heroOrb2, {
+                        y: -30,
+                        x: -15,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.page-hero',
+                            start: 'top top',
+                            end: 'bottom top',
+                            scrub: 2
+                        }
+                    });
+                }
+
+                // ---- 4. GENERAL GS-REVEAL ----
                 gsap.utils.toArray('.gs-reveal').forEach(elem => {
                     gsap.fromTo(elem,
                         { y: 30, opacity: 0 },
@@ -1796,40 +2383,98 @@
                     );
                 });
 
-                // Contact cards stagger
+                // ---- 5. CONTACT CARDS STAGGER ----
                 const cinfoCards = document.querySelectorAll('.cinfo-card');
                 if (cinfoCards.length) {
                     gsap.to(cinfoCards, {
                         opacity: 1,
                         y: 0,
                         duration: 0.7,
-                        stagger: 0.12,
+                        stagger: 0.15,
                         ease: 'power3.out',
                         scrollTrigger: {
                             trigger: '.contact-cards-grid',
                             start: 'top 80%',
-                            once: true
+                            once: true,
+                            onEnter: () => {
+                                // ---- 6. CONNECTOR LINE DRAW ANIMATION ----
+                                const connLine1 = document.getElementById('connLine1');
+                                const connLine2 = document.getElementById('connLine2');
+                                const connDot1 = document.getElementById('connDot1');
+                                const connDot2 = document.getElementById('connDot2');
+
+                                if (connLine1) {
+                                    setTimeout(() => connLine1.classList.add('animated'), 200);
+                                }
+                                if (connLine2) {
+                                    setTimeout(() => connLine2.classList.add('animated'), 400);
+                                }
+                                if (connDot1) {
+                                    setTimeout(() => connDot1.classList.add('animated'), 600);
+                                }
+                                if (connDot2) {
+                                    setTimeout(() => connDot2.classList.add('animated'), 750);
+                                }
+                            }
                         }
                     });
                 }
 
-                // Map + Form section
+                // ---- 7. MAP SLIDE FROM LEFT ----
+                const mapWrapper = document.getElementById('mapWrapper');
+                if (mapWrapper) {
+                    gsap.fromTo(mapWrapper,
+                        { x: -80, opacity: 0 },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: 1,
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: '.contact-interactive-grid',
+                                start: 'top 80%',
+                                once: true
+                            }
+                        }
+                    );
+                }
+
+                // ---- 8. FORM SLIDE FROM RIGHT ----
+                const formWrapper = document.getElementById('formWrapper');
+                if (formWrapper) {
+                    gsap.fromTo(formWrapper,
+                        { x: 80, opacity: 0 },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: 1,
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: '.contact-interactive-grid',
+                                start: 'top 80%',
+                                once: true
+                            }
+                        }
+                    );
+                }
+
+                // Set interactive grid to visible for the animations above
                 const interactiveGrid = document.querySelector('.contact-interactive-grid');
                 if (interactiveGrid) {
                     gsap.to(interactiveGrid, {
                         opacity: 1,
                         y: 0,
-                        duration: 0.9,
-                        ease: 'power3.out',
+                        duration: 0.3,
+                        ease: 'power2.out',
                         scrollTrigger: {
                             trigger: interactiveGrid,
-                            start: 'top 80%',
+                            start: 'top 85%',
                             once: true
                         }
                     });
                 }
 
-                // Form header children stagger
+                // ---- 9. FORM HEADER CHILDREN STAGGER ----
                 const formHeader = document.querySelector('.form-header');
                 if (formHeader) {
                     gsap.fromTo(formHeader.children,
@@ -1849,7 +2494,39 @@
                     );
                 }
 
-                // Magnetic FAB effect
+                // ---- 10. BACKGROUND SHAPES PARALLAX ON SCROLL ----
+                const bgShape1 = document.getElementById('bgShape1');
+                const bgShape2 = document.getElementById('bgShape2');
+
+                if (bgShape1) {
+                    gsap.to(bgShape1, {
+                        y: -80,
+                        x: 30,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.contact-cards-section',
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1.5
+                        }
+                    });
+                }
+
+                if (bgShape2) {
+                    gsap.to(bgShape2, {
+                        y: -60,
+                        x: -20,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.contact-cards-section',
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 2
+                        }
+                    });
+                }
+
+                // ---- 11. MAGNETIC FAB EFFECT ----
                 if (fabBtn) {
                     fabBtn.addEventListener('mousemove', (e) => {
                         const rect = fabBtn.getBoundingClientRect();
@@ -1872,7 +2549,7 @@
                     });
                 }
 
-                // Recognition marquee reveal
+                // ---- 12. RECOGNITION MARQUEE REVEAL ----
                 const recognitionTitle = document.querySelector('.recognition-title');
                 if (recognitionTitle) {
                     gsap.fromTo(recognitionTitle,
@@ -1883,6 +2560,56 @@
                         }
                     );
                 }
+            }
+
+            // ===== CARD 3D TILT ON MOUSEMOVE =====
+            const tiltCards = document.querySelectorAll('[data-tilt]');
+            tiltCards.forEach(card => {
+                card.style.transformStyle = 'preserve-3d';
+                card.style.willChange = 'transform';
+
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    // Calculate rotation with perspective
+                    const rotateX = ((y - centerY) / centerY) * -6;  // Max ±6 degrees
+                    const rotateY = ((x - centerX) / centerX) * 6;
+
+                    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+                    card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                    setTimeout(() => {
+                        card.style.transition = '';
+                    }, 500);
+                });
+
+                card.addEventListener('mouseenter', () => {
+                    card.style.transition = '';
+                });
+            });
+
+            // ===== FORM GLOW RING CONTINUOUS ROTATION (JS ENHANCED) =====
+            const formGlowRing = document.getElementById('formGlowRing');
+            if (formGlowRing && typeof gsap !== 'undefined') {
+                // The CSS animation handles the base rotation;
+                // GSAP adds an extra floating drift on scroll
+                gsap.to(formGlowRing, {
+                    y: -20,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.form-wrapper',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 2
+                    }
+                });
             }
         });
     </script>

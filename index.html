@@ -7,10 +7,20 @@
     <title>TEIOF Impex Trade Pvt. Ltd.</title>
     <link rel="shortcut icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { 
+                preflight: false,
+                visibility: false
+            }
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
@@ -566,6 +576,43 @@
             transform: translateY(-3px);
         }
 
+        .btn-minimal {
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none !important;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 82, 255, 0.2);
+        }
+
+        .btn-minimal i {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .btn-minimal:hover {
+            background: #0043d1;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 82, 255, 0.3);
+        }
+
+        .btn-minimal:hover i {
+            transform: translateX(5px) rotate(360deg);
+        }
+
+        .btn-minimal:active {
+            transform: scale(0.94) translateY(2px);
+            background: #00F0FF;
+            color: #0A2540;
+            box-shadow: 0 2px 10px rgba(0, 82, 255, 0.4);
+            transition: all 0.1s ease;
+        }
+
         /* Marquee Section */
         .marquee-section {
             padding: 12px 0;
@@ -1012,7 +1059,6 @@
         .recognition-section {
             padding: 60px 0;
             background: var(--white);
-            border-top: 1px solid #eee;
             overflow: hidden;
         }
 
@@ -1086,8 +1132,7 @@
         .site-footer {
             position: relative;
             background-color: #2A3132;
-            border-top: 4px solid #0052FF;
-            padding: 1.5rem 2rem 0.75rem;
+            padding: 6rem 2rem 4rem;
             z-index: 1;
             overflow: hidden;
             color: #fff;
@@ -1116,7 +1161,7 @@
             opacity: 0.15;
             z-index: 0;
             pointer-events: none;
-            transform: scaleX(1.2) scaleY(1);
+            transform: scale(1.1);
             /* filter: brightness(0) invert(1); Temporary removal for debugging */
         }
 
@@ -1124,8 +1169,8 @@
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-            gap: 1.5rem;
+            grid-template-columns: 1.8fr 1fr 1.2fr;
+            gap: 4rem;
             position: relative;
             z-index: 2;
         }
@@ -1147,9 +1192,10 @@
 
         .about-text {
             color: #fff;
-            line-height: 1.6;
+            line-height: 1.9;
             margin-bottom: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
         }
 
         .inquiry-btn {
@@ -1289,8 +1335,8 @@
 
         .footer-bottom {
             max-width: 1280px;
-            margin: 0.75rem auto 0;
-            padding-top: 0.75rem;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
             border-top: 1px solid #fff;
             position: relative;
             z-index: 2;
@@ -1298,7 +1344,7 @@
 
         .footer-bottom-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -1314,6 +1360,7 @@
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
@@ -1422,25 +1469,159 @@
             }
         }
 
-        /* Circular Why Choose Us Section - Premium Agriculture Theme */
-        .why-choose-circular {
-            padding: 140px 0;
-            background: transparent;
+        /* Why Choose Us New Styles */
+        :root {
+            --brand-green: #065F46;
+            --brand-blue: #0052FF;
+            --brand-dark: #0A2540;
+            --bg-white: #FFFFFF;
+            --soft-gray: #F1F5F9;
+            --border-light: #E2E8F0;
+            --transition-main: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .wcu-section {
+            padding: 120px 0;
+            overflow: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .wcu-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 1100px) {
+            .wcu-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition-main);
             position: relative;
+            display: flex;
+            gap: 20px;
+            height: 100%;
         }
 
-        .wcu-image-wrapper {
-            margin-top: 20px;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .wcu-image-wrapper:hover {
+        .feature-card:hover {
+            border-color: var(--brand-blue);
+            box-shadow: 0 20px 40px -10px rgba(0, 82, 255, 0.08);
             transform: scale(1.02);
         }
 
-        .wcu-image-wrapper img {
-            display: block;
+        .icon-box {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: var(--soft-gray);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-main);
+        }
+
+        .feature-card:hover .icon-box {
+            background: var(--brand-blue);
+            color: white;
+        }
+
+        .icon-box i {
+            font-size: 24px;
+            color: var(--brand-blue);
+            transition: var(--transition-main);
+        }
+
+        .feature-card:hover .icon-box i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .card-idx {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--brand-blue);
+            opacity: 0.1;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .feature-card:hover .card-idx {
+            opacity: 0.3;
+            transform: scale(1.15) translateY(-5px) rotate(5deg);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        .image-stack {
+            position: sticky;
+            top: 100px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-stack img {
             width: 100%;
+            height: 600px;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .image-stack:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .reveal-up {
+            opacity: 0;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+
+        ::view-transition-group(*),
+        ::view-transition-old(*),
+        ::view-transition-new(*) {
+            animation-duration: 0.25s;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
         }
     </style>
 </head>
@@ -1484,35 +1665,26 @@
         <div class="loader-bar">
             <div class="loader-progress"></div>
         </div>
-        <div class="loader-text">TEIOF Impex</div>
+        <div class="loader-text">TEIOF IMPEX</div>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="brand-banner" href="index.html">
-                <img src="logo.png" alt="TEIOF Logo" class="main-logo-img">
-            </a>
-            <button class="navbar-toggler ms-auto order-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler ms-auto order-1 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end order-3 order-lg-2" id="navbarNav">
+            <div class="navbar-collapse justify-content-end order-3 order-lg-1 collapse" id="navbarNav" style="">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item dropdown ms-lg-3 mt-3 mt-lg-0">
-                        <ul class="dropdown-menu border-0 shadow" aria-labelledby="inquiryDropdown">
-                            <li><a class="dropdown-item" href="mailto:export@teiof.com"><i
-                                        class="fas fa-envelope text-primary me-2"></i>Email</a></li>
-                            <li><a class="dropdown-item" href="https://wa.me/917435912528"><i
-                                        class="fab fa-whatsapp text-success me-2"></i>WhatsApp</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
+            <a class="brand-banner" href="index.html">
+                <img src="logo.png" alt="TEIOF Logo" class="main-logo-img">
+            </a>
         </div>
     </nav>
 
@@ -1900,8 +2072,7 @@
                         sourcing practices, ensuring that every product we export meets the highest global standards
                         while delivering maximum value to our partners.</p>
                     <div class="mt-5 gs-reveal">
-                        <a href="about.html" class="hero-btn"
-                            style="background: var(--accent); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">Learn
+                        <a href="about.html" class="btn-minimal">Learn
                             More
                             <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -2047,14 +2218,112 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-circular" id="why-choose">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label gs-reveal">Our Process</p>
-                <h2 class="section-title gs-reveal">Why Choose TEIOF Impex?</h2>
+    <section class="wcu-section" id="why-choose">
+        <div class="container mx-auto px-6 lg:px-12">
+
+            <!-- Header Group -->
+            <div class="mb-16 max-w-2xl" id="header-anim">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-[2px] bg-[#0052FF]"></div>
+                    <span class="text-[#0052FF] font-bold uppercase tracking-widest text-xs">Reliable Partner in Agro
+                        Exports</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#0A2540] mb-6 leading-tight">
+                    Driven by Quality, <br><span class="text-[#0052FF]">Chosen Worldwide.</span>
+                </h2>
             </div>
-            <div class="wcu-image-wrapper gs-reveal" style="text-align: center; max-width: 1100px; margin: 0 auto;">
-                <img src="wcu.png" alt="Why Choose TEIOF Impex" style="width: 100%; height: auto; border: none !important; box-shadow: none !important; outline: none !important;">
+
+            <div class="wcu-layout">
+
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="features-grid">
+
+                    <!-- 01: Sourcing -->
+                    <div class="feature-card reveal-up">
+                        <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div>
+                            <span class="card-idx">01</span>
+                            <h3 class="card-title">Innovative Sourcing</h3>
+                            <p class="card-text">Continuously identifying new and diverse high-quality global produce
+                                sources to keep your supply chain robust.</p>
+                        </div>
+                    </div>
+
+                    <!-- 02: Logistics -->
+                    <div class="feature-card reveal-up">
+                        <div class="icon-box"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                        <div>
+                            <span class="card-idx">02</span>
+                            <h3 class="card-title">Customized Logistics</h3>
+                            <p class="card-text">Providing tailored shipping and delivery options to optimize global
+                                reach and reduce transit overheads.</p>
+                        </div>
+                    </div>
+
+                    <!-- 03: Reliability -->
+                    <div class="feature-card reveal-up">
+                        <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+                        <div>
+                            <span class="card-idx">03</span>
+                            <h3 class="card-title">Reliable Partners</h3>
+                            <p class="card-text">Trusted relations with local farmers and suppliers built over decades
+                                for consistent export quality.</p>
+                        </div>
+                    </div>
+
+                    <!-- 04: Packaging -->
+                    <div class="feature-card reveal-up">
+                        <div class="icon-box"><i class="fa-solid fa-box-open"></i></div>
+                        <div>
+                            <span class="card-idx">04</span>
+                            <h3 class="card-title">Flexible Packaging</h3>
+                            <p class="card-text">Customized packing solutions designed to meet diverse market
+                                regulations and brand aesthetic needs.</p>
+                        </div>
+                    </div>
+
+                    <!-- 05: Transparency -->
+                    <div class="feature-card reveal-up">
+                        <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <span class="card-idx">05</span>
+                            <h3 class="card-title">Traceability</h3>
+                            <p class="card-text">Ensuring the origin and handling of all products is fully documented,
+                                from farm-gate to final port.</p>
+                        </div>
+                    </div>
+
+                    <!-- 06: Expertise -->
+                    <div class="feature-card reveal-up">
+                        <div class="icon-box"><i class="fa-solid fa-certificate"></i></div>
+                        <div>
+                            <span class="card-idx">06</span>
+                            <h3 class="card-title">Global Standards</h3>
+                            <p class="card-text">Products meet HACCP, GLOBALG.A.P., and ISO global safety standards for
+                                complete buyer confidence.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side Image (Reference Style) -->
+                <div class="reveal-left">
+                    <div class="image-stack">
+                        <img src="premium_produce.png" alt="Premium Agro Produce">
+                        <div class="image-overlay">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-[#0052FF] p-3 rounded-full text-white">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-800">Trusted Worldwide</p>
+                                    <p class="text-xs text-slate-500">Delivering to 40+ countries annually.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -2094,15 +2363,22 @@
         <div class="footer-container">
             <div class="footer-col brand-col">
                 <div class="footer-logo">
-                    <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="25" y="20" width="30" height="80" fill="#fff" />
-                        <path d="M 20 60 Q 50 50 80 60" stroke="#fff" stroke-width="8" fill="none" />
-                        <circle cx="80" cy="60" r="15" stroke="#fff" stroke-width="3" fill="none" />
-                    </svg>
-                    TEIOF <span>Impex</span>
+                    <img src="tlogo.png" alt="TEIOF Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                    TEIOF <span>IMPEX</span>
                 </div>
-                <p class="about-text">TEIOF Impex is a global source of premium agro-based products. Quality,
-                    affordability, and expertise define our commitment to excellence.</p>
+                <p class="about-text">Harvested by hands that know the land, TEIOF Impex delivers premium agro-based
+                    products to global markets with a commitment to quality, reliability, and trusted expertise.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4 class="col-title">Quick Links</h4>
@@ -2111,16 +2387,6 @@
                     <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
                     <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4 class="col-title">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Spices</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Oil & Seeds</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Raisins</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pulses</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Animal Feeds</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -2153,16 +2419,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>© 2024 <strong>TEIOF Impex</strong> All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+                <p>© 2024 <strong>TEIOF IMPEX</strong> All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -2263,6 +2520,52 @@
 
                 heroSlideInterval = setInterval(nextHeroSlide, 5000);
             }
+
+            // --- Why Choose Us New Animation ---
+            gsap.from("#header-anim > *", {
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: "#header-anim",
+                    start: "top 85%"
+                }
+            });
+
+            gsap.to(".reveal-up", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.2)",
+                scrollTrigger: {
+                    trigger: "#features-grid",
+                    start: "top 75%",
+                    toggleActions: "play none none none"
+                }
+            });
+
+            gsap.to(".reveal-left", {
+                opacity: 1,
+                x: 0,
+                duration: 1.2,
+                ease: "expo.out",
+                scrollTrigger: {
+                    trigger: ".reveal-left",
+                    start: "top 80%"
+                }
+            });
+
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, { y: -8, duration: 0.3 });
+                });
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { y: 0, duration: 0.3 });
+                });
+            });
         });
     </script>
 </body>

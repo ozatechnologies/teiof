@@ -627,8 +627,7 @@
         .site-footer {
             position: relative;
             background-color: #2A3132;
-            border-top: 4px solid #0052FF;
-            padding: 1.5rem 2rem 0.75rem;
+            padding: 6rem 2rem 4rem;
             z-index: 1;
             overflow: hidden;
             color: #fff;
@@ -658,15 +657,15 @@
             /* Low opacity for subtle background */
             z-index: 0;
             pointer-events: none;
-            transform: scaleX(1.2) scaleY(1);
+            transform: scale(1.1);
         }
 
         .footer-container {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-            gap: 1.5rem;
+            grid-template-columns: 1.8fr 1fr 1.2fr;
+            gap: 4rem;
             position: relative;
             z-index: 2;
         }
@@ -688,9 +687,10 @@
 
         .about-text {
             color: #fff;
-            line-height: 1.6;
+            line-height: 1.9;
             margin-bottom: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
         }
 
         .col-title {
@@ -807,8 +807,8 @@
 
         .footer-bottom {
             max-width: 1280px;
-            margin: 0.75rem auto 0;
-            padding-top: 0.75rem;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
             border-top: 1px solid #fff;
             position: relative;
             z-index: 2;
@@ -816,7 +816,7 @@
 
         .footer-bottom-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -832,6 +832,7 @@
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
@@ -934,7 +935,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <button class="navbar-toggler ms-auto order-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler ms-auto order-1" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end order-3 order-lg-1" id="navbarNav">
@@ -979,27 +981,28 @@
             <div class="bento-grid">
                 <div class="bento-item large gs-reveal">
                     <video autoplay muted loop playsinline
-                        src="https://www.shutterstock.com/shutterstock/videos/4001301393/preview/stock-footage-aerial-perspective-captures-irrigation-system-watering-vibrant-crops-emphasizing-agricultural.mp4"></video>
+                        src="https://cdn.pixabay.com/video/2021/08/30/86887-594991366_large.mp4"></video>
                     <div class="bento-overlay">
                         <h4>Sustainable Farming</h4><span>Quality from the source</span>
                     </div>
                 </div>
                 <div class="bento-item gs-reveal">
                     <video autoplay muted loop playsinline
-                        src="https://www.shutterstock.com/shutterstock/videos/4036102679/preview/stock-footage-combine-harvester-working-on-the-wheat-field-at-sunset-drone-shot-close-up-beautiful-rural.mp4"></video>
+                        src="https://cdn.pixabay.com/video/2019/05/12/23544-335833111_large.mp4"></video>
                 </div>
                 <div class="bento-item gs-reveal"><img
-                        src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80"></div>
+                        src="https://somnathagriimpex.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-05-at-09.16.13-768x1024.jpeg">
+                </div>
                 <div class="bento-item wide gs-reveal">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80">
+                    <img src="https://i.pinimg.com/736x/9d/ff/82/9dff8202c1ebc5b5bb4a4f07719adfe8.jpg">
                     <div class="bento-overlay">
                         <h4>Premium Harvest</h4><span>Handpicked with care</span>
                     </div>
                 </div>
                 <div class="bento-item gs-reveal"><img
-                        src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80"></div>
+                        src="https://i.pinimg.com/736x/c0/8c/08/c08c084922ce16e7611c8292cc76274f.jpg"></div>
                 <div class="bento-item gs-reveal"><img
-                        src="https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=400&q=80"></div>
+                        src="https://i.pinimg.com/1200x/fe/fd/48/fefd488f82b5dd45d1d110ddc3be62a9.jpg"></div>
                 <div class="bento-item tall gs-reveal">
                     <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=600&q=80">
                     <div class="bento-overlay">
@@ -1007,7 +1010,8 @@
                     </div>
                 </div>
                 <div class="bento-item gs-reveal"><img
-                        src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=400&q=80"></div>
+                        src="https://plus.unsplash.com/premium_photo-1661884103227-61eee389cf2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                </div>
                 <div class="bento-item gs-reveal"><img
                         src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&q=80"></div>
             </div>
@@ -1087,7 +1091,6 @@
         .recognition-section {
             padding: 60px 0;
             background: var(--white);
-            border-top: 1px solid #eee;
             overflow: hidden;
         }
 
@@ -1197,15 +1200,22 @@
         <div class="footer-container">
             <div class="footer-col brand-col">
                 <div class="footer-logo">
-                    <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="25" y="20" width="30" height="80" fill="#fff" />
-                        <path d="M 20 60 Q 50 50 80 60" stroke="#fff" stroke-width="8" fill="none" />
-                        <circle cx="80" cy="60" r="15" stroke="#fff" stroke-width="3" fill="none" />
-                    </svg>
-                    TEIOF <span>Impex</span>
+                    <img src="tlogo.png" alt="TEIOF Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                    TEIOF <span>IMPEX</span>
                 </div>
-                <p class="about-text">TEIOF Impex is a global source of premium agro-based products. Quality,
-                    affordability, and expertise define our commitment to excellence.</p>
+                <p class="about-text">Harvested by hands that know the land, TEIOF Impex delivers premium agro-based
+                    products to global markets with a commitment to quality, reliability, and trusted expertise.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4 class="col-title">Quick Links</h4>
@@ -1214,16 +1224,6 @@
                     <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     <li><a href="product.html"><i class="fas fa-chevron-right"></i> Products</a></li>
                     <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4 class="col-title">Products</h4>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Spices</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Oil & Seeds</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Raisins</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pulses</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Animal Feeds</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1256,16 +1256,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>© 2024 <strong>TEIOF Impex</strong> All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+                <p>© 2024 <strong>TEIOF IMPEX</strong> All rights reserved.</p>
             </div>
         </div>
     </footer>
