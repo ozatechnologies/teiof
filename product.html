@@ -1260,6 +1260,42 @@
             pointer-events: none;
         }
 
+        /* Footer */
+        .site-footer {
+            position: relative;
+            background-color: #2A3132;
+            padding: 6rem 2rem 4rem;
+            z-index: 1;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 100% 100%, rgba(0, 82, 255, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 0% 0%, rgba(10, 37, 64, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .site-footer::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('f2.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+            transform: scale(1.1);
+        }
+
         .footer-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -1278,23 +1314,32 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo span {
+            color: #fff;
         }
 
         .about-text {
             color: #fff;
             line-height: 1.9;
             margin-bottom: 0.5rem;
-            font-size: 0.93rem;
+            font-size: 0.95rem;
             opacity: 0.8;
         }
 
         .col-title {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.8rem;
             position: relative;
             padding-bottom: 0.4rem;
+        }
+
+        .contact-title {
+            color: #ffffff !important;
         }
 
         .col-title::after {
@@ -1302,8 +1347,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 36px;
-            height: 2px;
+            width: 40px;
+            height: 3px;
             background: #fff;
             border-radius: 2px;
         }
@@ -1320,23 +1365,25 @@
         .footer-links a {
             color: #fff;
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             gap: 0.4rem;
             font-weight: 500;
             font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-
-        .footer-links a:hover {
-            transform: translateX(4px);
         }
 
         .footer-links a i {
-            font-size: 0.72rem;
+            font-size: 0.75rem;
+            color: #fff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
-            transform: translateX(-8px);
-            transition: all 0.3s;
+            transform: translateX(-10px);
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(5px);
         }
 
         .footer-links a:hover i {
@@ -1359,6 +1406,21 @@
             color: #fff;
             font-size: 0.9rem;
             flex-shrink: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: #fff;
+            color: #2A3132;
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 0.85rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
         }
 
         .contact-text p,
@@ -1367,9 +1429,11 @@
             font-size: 0.82rem;
             line-height: 1.4;
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .contact-text a:hover {
+            color: #fff;
             text-decoration: underline;
         }
 
@@ -1377,7 +1441,7 @@
             max-width: 1280px;
             margin: 3rem auto 0;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid #fff;
             position: relative;
             z-index: 2;
         }
@@ -1400,8 +1464,8 @@
         }
 
         .social-links a {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
@@ -1409,7 +1473,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.75rem;
         }
@@ -1417,17 +1481,30 @@
         .social-links a:hover {
             background: #fff;
             color: #2A3132;
-            transform: translateY(-3px);
+            border-color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0, 82, 255, 0.2);
         }
 
-        @media(max-width:768px) {
+        @media (max-width: 768px) {
             .footer-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
             }
 
             .site-footer {
-                padding: 2rem 1rem 1rem;
+                padding: 4rem 1rem 2rem;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .site-footer::after {
+                background-size: contain !important;
+                background-position: center bottom !important;
             }
         }
 
@@ -1992,18 +2069,19 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
         <div class="footer-container">
-            <div class="footer-col">
+            <div class="footer-col brand-col">
                 <div class="footer-logo">
-                    <img src="tlogo.png" alt="TEIOF" style="height:38px;width:auto;filter:brightness(0) invert(1);">
+                    <img src="tlogo.png" alt="TEIOF Logo"
+                        style="height: 40px; width: auto; filter: brightness(0) invert(1);">
                     TEIOF <span>IMPEX</span>
                 </div>
                 <p class="about-text">Harvested by hands that know the land, TEIOF Impex delivers premium agro-based
                     products to global markets with a commitment to quality, reliability, and trusted expertise.</p>
                 <div class="social-links">
                     <a href="https://wa.me/917435912528" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/company/teiof-impex" target="_blank"><i
+                    <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"><i
                             class="fab fa-linkedin-in"></i></a>
                     <a href="https://facebook.com/teiof.impex" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
@@ -2012,7 +2090,6 @@
                     <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
                 </div>
             </div>
-
             <div class="footer-col">
                 <h4 class="col-title">Quick Links</h4>
                 <ul class="footer-links">
@@ -2020,30 +2097,31 @@
                     <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     <li><a href="product.html"><i class="fas fa-chevron-right"></i> Products</a></li>
                     <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4 class="col-title contact-title">Contact Us</h4>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                     <div class="contact-text">
-                        <strong>WhatsApp</strong>
                         <a href="https://wa.me/917435912528" target="_blank">+91 74359 12528</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text">
+                        <a href="tel:+917435912528">+91 74359 12528</a>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-text">
-                        <strong>Email Address</strong>
                         <a href="mailto:export@teiof.com">export@teiof.com</a>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-text">
-                        <strong>Our Location</strong>
                         <p>Sardar Patel Arcade, Canal Road, Morbi, Gujarat, India</p>
                     </div>
                 </div>
@@ -2051,7 +2129,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>© 2024 <strong>TEIOF IMPEX</strong>. All rights reserved.</p>
+                <p>© 2024 <strong>TEIOF IMPEX</strong> All rights reserved.</p>
             </div>
         </div>
     </footer>
