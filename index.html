@@ -15,7 +15,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            corePlugins: { 
+            corePlugins: {
                 preflight: false,
                 visibility: false
             }
@@ -1670,7 +1670,8 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <button class="navbar-toggler ms-auto order-1 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false">
+            <button class="navbar-toggler ms-auto order-1 collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse justify-content-end order-3 order-lg-1 collapse" id="navbarNav" style="">
@@ -1920,37 +1921,37 @@
     </style>
 
     <script>
-        (function () {
-            const fab = document.getElementById('contact-fab');
-            const toggle = document.getElementById('fab-toggle');
-            let isOpen = false;
+            (function () {
+                const fab = document.getElementById('contact-fab');
+                const toggle = document.getElementById('fab-toggle');
+                let isOpen = false;
 
-            toggle.addEventListener('click', function (e) {
-                e.stopPropagation();
-                isOpen = !isOpen;
-                fab.classList.toggle('active', isOpen);
-            });
-
-            // Close when clicking outside
-            document.addEventListener('click', function (e) {
-                if (isOpen && !fab.contains(e.target)) {
-                    isOpen = false;
-                    fab.classList.remove('active');
-                }
-            });
-
-            // Entrance animation
-            setTimeout(function () {
-                fab.style.opacity = '0';
-                fab.style.transform = 'translateY(30px) scale(0.8)';
-                fab.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-
-                requestAnimationFrame(function () {
-                    fab.style.opacity = '1';
-                    fab.style.transform = 'translateY(0) scale(1)';
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    isOpen = !isOpen;
+                    fab.classList.toggle('active', isOpen);
                 });
-            }, 100);
-        })();
+
+                // Close when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (isOpen && !fab.contains(e.target)) {
+                        isOpen = false;
+                        fab.classList.remove('active');
+                    }
+                });
+
+                // Entrance animation
+                setTimeout(function () {
+                    fab.style.opacity = '0';
+                    fab.style.transform = 'translateY(30px) scale(0.8)';
+                    fab.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+                    requestAnimationFrame(function () {
+                        fab.style.opacity = '1';
+                        fab.style.transform = 'translateY(0) scale(1)';
+                    });
+                }, 100);
+            })();
     </script>
 
     <!-- Marquee -->
@@ -2057,14 +2058,11 @@
     </section>
 
     <!-- About -->
-    <section class="about-section" id="about">
+    <section class="about-section" id="about" style="padding-top: 60px;">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title gs-reveal">TEIOF Impex</h2>
-            </div>
             <div class="about-grid">
                 <div class="about-content gs-reveal">
-                    <h3>Innovating Agro-Export for a Modern World</h3>
+                    <h3>Innovating <span class="text-blue-600 border-b border-blue-600/30 pb-0.5">Agro-Export</span> for a Modern World</h3>
                     <p>TEIOF Impex is a forward-thinking global leader in the agro-based product industry. We leverage
                         advanced supply chain solutions and deep market insights to deliver premium quality products
                         to our international clientele with unmatched efficiency.</p>
@@ -2377,7 +2375,8 @@
                     <a href="https://www.instagram.com/teiof_impex/" target="_blank"><i
                             class="fab fa-instagram"></i></a>
                     <a href="https://youtube.com/@teiofimpex" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://www.google.co.in/search?q=TEIOF+IMPEX&ludocid=9607118112606186426&lsig=AB86z5WNwrQbfMZ76Jh-fs1gMPhd"
+                        target="_blank"><i class="fab fa-google"></i></a>
                 </div>
             </div>
             <div class="footer-col">
