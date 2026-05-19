@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEIOF IMPEX | EXIM Website Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #ffffff;
+            --brand-blue: #0052cc;      /* Matches your logo blue */
+            --text-dark: #0f172a;       /* Deep slate/black for premium readability */
+            --text-muted: #64748b;      /* Clean slate gray */
+            --border-light: #f1f5f9;    /* Ultra light divider */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 540px;
+            width: 100%;
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Brand Identity Layout */
+        .brand-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .logo-img {
+            max-width: 110px;
+            height: auto;
+        }
+
+        .brand-name {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        .brand-name span {
+            color: var(--brand-blue);
+        }
+
+        /* Main Message */
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 4rem;
+        }
+
+        /* Minimal Footer Email */
+        .footer-email {
+            border-top: 2px solid var(--border-light);
+            padding-top: 2.5rem;
+        }
+
+        .email-anchor {
+            font-size: 1.2rem;
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .email-anchor:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Animation */
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-name { font-size: 1.8rem; }
+            h1 { font-size: 1.3rem; }
+            p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Identity Header -->
+        <div class="brand-block">
+            <img src="https://ozatechnologies.github.io/teiof/tlogo.png" alt="TEIOF logo" class="logo-img">
+            <h2 class="brand-name">TEIOF IMPEX<span>.</span></h2>
+        </div>
+        
+        <!-- Core Message -->
+        <h1>Our official EXIM website is coming soon.</h1>
+        <p>We are currently setting up our digital platform to better serve our international import and export operations.</p>
+        
+        <!-- Minimal Contact -->
+        <div class="footer-email">
+            <a href="mailto:info@teiofimpex.com" class="email-anchor">info@teiofimpex.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
