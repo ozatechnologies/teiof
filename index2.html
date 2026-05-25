@@ -2362,65 +2362,177 @@
         </div>
     </section>
     <footer class="site-footer" id="contact"
-        style="background-color: #000000; padding: 3rem 0 1rem; position: relative;">
+        style="background-color: #000000; padding: 7rem 0 3.5rem; position: relative;">
         <div class="container mx-auto px-4" style="max-width: 1200px;">
-            <div class="grid grid-cols-1 md:grid-cols-[1.4fr_0.8fr_0.8fr] gap-12 text-white relative"
+            <div class="grid grid-cols-1 md:grid-cols-[1.4fr_0.8fr_0.8fr] gap-16 text-white relative footer-grid"
                 style="align-items: start;">
 
                 <!-- Left: Logo & Brand Text -->
                 <div>
-                    <div class="footer-logo" style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <img src="tlogo.png" alt="TEIOF Logo" style="height: 70px; filter: brightness(0) invert(1);">
-                        <span
-                            style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-left: 15px; font-family: 'Times New Roman', Times, serif; letter-spacing: 1.5px; opacity: 1; white-space: nowrap;">TEIOF
+                    <div class="footer-logo" style="display: flex; align-items: center; margin-bottom: 24px;">
+                        <img src="tlogo.png" alt="TEIOF Logo" class="footer-brand-logo" style="height: 80px; filter: brightness(0) invert(1);">
+                        <span class="footer-brand-title"
+                            style="font-size: 2.8rem; font-weight: 800; color: #ffffff; margin-left: 18px; font-family: 'Times New Roman', Times, serif; letter-spacing: 1.5px; opacity: 1; white-space: nowrap;">TEIOF
                             IMPEX</span>
                     </div>
-                    <div class="text-white font-medium text-sm" style="line-height: 1.7; color: #d1d5db;">
+                    <div class="text-white"
+                        style="font-size: 17.5px; line-height: 1.8; color: #d1d5db; margin-bottom: 32px; font-weight: 400;">
                         Harvested by hands that know the land, TEIOF Impex delivers premium agro-based products to
                         global markets with a commitment to quality, reliability, and trusted expertise.
+                    </div>
+
+                    <!-- Social Media Icons placed under brand text -->
+                    <div class="footer-social-icons" style="display: flex; gap: 16px; margin-top: 25px;">
+                        <style>
+                            .social-icon-link {
+                                width: 44px;
+                                height: 44px;
+                                border-radius: 50%;
+                                border: 1.5px solid #4b5563;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: #d1d5db;
+                                font-size: 18px;
+                                text-decoration: none;
+                                transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+                            }
+
+                            .social-icon-link:hover {
+                                transform: scale(1.15) translateY(-3px);
+                                border-color: #ffffff;
+                                color: #ffffff;
+                                box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+                            }
+
+                            .social-icon-link:active {
+                                transform: scale(0.9);
+                                transition-duration: 0.1s;
+                            }
+
+                            .social-icon-link.social-wa:hover {
+                                color: #25D366;
+                                border-color: #25D366;
+                                box-shadow: 0 0 15px rgba(37, 211, 102, 0.25);
+                            }
+
+                            .social-icon-link.social-li:hover {
+                                color: #0A66C2;
+                                border-color: #0A66C2;
+                                box-shadow: 0 0 15px rgba(10, 102, 194, 0.25);
+                            }
+
+                            .social-icon-link.social-fb:hover {
+                                color: #1877F2;
+                                border-color: #1877F2;
+                                box-shadow: 0 0 15px rgba(24, 119, 242, 0.25);
+                            }
+
+                            .social-icon-link.social-ig:hover {
+                                color: #E1306C;
+                                border-color: #E1306C;
+                                box-shadow: 0 0 15px rgba(225, 48, 108, 0.25);
+                            }
+
+                            .social-icon-link.social-yt:hover {
+                                color: #FF0000;
+                                border-color: #FF0000;
+                                box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+                            }
+
+                            @media (max-width: 768px) {
+                                .site-footer {
+                                    padding: 4rem 0 2.5rem !important;
+                                }
+                                .footer-grid {
+                                    gap: 2.5rem !important;
+                                }
+                                .footer-brand-logo {
+                                    height: 55px !important;
+                                }
+                                .footer-brand-title {
+                                    font-size: 2rem !important;
+                                    margin-left: 12px !important;
+                                    white-space: normal !important;
+                                }
+                                .footer-col-quicklinks {
+                                    text-align: left !important;
+                                    padding-top: 0 !important;
+                                }
+                                .footer-col-quicklinks ul {
+                                    margin: 0 !important;
+                                }
+                                .footer-col-contact {
+                                    padding-left: 0 !important;
+                                    padding-top: 0 !important;
+                                }
+                                .footer-copyright-wrap {
+                                    margin-top: 3rem !important;
+                                    padding-top: 1.5rem !important;
+                                }
+                            }
+                        </style>
+                        <a href="https://wa.me/917435912528" target="_blank" class="social-icon-link social-wa">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"
+                            class="social-icon-link social-li">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://facebook.com/teiof.impex" target="_blank" class="social-icon-link social-fb">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/teiof_impex/" target="_blank"
+                            class="social-icon-link social-ig">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@teiofimpex" target="_blank" class="social-icon-link social-yt">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Centre: Quick Links -->
-                <div style="text-align: center;">
-                    <h4 class="text-2xl font-light mb-6"
-                        style="font-family: 'Times New Roman', Times, serif; color: #fff;">Quick Links</h4>
+                <div class="footer-col-quicklinks" style="text-align: center; padding-top: 10px;">
+                    <h4 class="mb-8"
+                        style="font-size: 1.85rem; font-weight: 700; font-family: 'Times New Roman', Times, serif; color: #fff; letter-spacing: 1.5px;">
+                        Quick Links</h4>
                     <ul
-                        style="list-style: none; padding: 0; margin: 0 auto; display: inline-flex; flex-direction: column; gap: 14px; text-align: left;">
+                        style="list-style: none; padding: 0; margin: 0 auto; display: inline-flex; flex-direction: column; gap: 16px; text-align: left;">
                         <li><a href="#home"
-                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: all 0.3s; padding: 4px 0;"
+                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 500; transition: all 0.3s; padding: 4px 0;"
                                 onmouseover="this.style.color='#fff'; this.style.paddingLeft='6px'"
                                 onmouseout="this.style.color='#d1d5db'; this.style.paddingLeft='0'"><i
-                                    class="fas fa-chevron-right" style="font-size: 10px; color: #6b7280;"></i> Home</a>
+                                    class="fas fa-chevron-right" style="font-size: 11px; color: #6b7280;"></i> Home</a>
                         </li>
                         <li><a href="#about"
-                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: all 0.3s; padding: 4px 0;"
+                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 500; transition: all 0.3s; padding: 4px 0;"
                                 onmouseover="this.style.color='#fff'; this.style.paddingLeft='6px'"
                                 onmouseout="this.style.color='#d1d5db'; this.style.paddingLeft='0'"><i
-                                    class="fas fa-chevron-right" style="font-size: 10px; color: #6b7280;"></i> About
+                                    class="fas fa-chevron-right" style="font-size: 11px; color: #6b7280;"></i> About
                                 Us</a></li>
                         <li><a href="#products"
-                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: all 0.3s; padding: 4px 0;"
+                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 500; transition: all 0.3s; padding: 4px 0;"
                                 onmouseover="this.style.color='#fff'; this.style.paddingLeft='6px'"
                                 onmouseout="this.style.color='#d1d5db'; this.style.paddingLeft='0'"><i
-                                    class="fas fa-chevron-right" style="font-size: 10px; color: #6b7280;"></i>
+                                    class="fas fa-chevron-right" style="font-size: 11px; color: #6b7280;"></i>
                                 Products</a></li>
                         <li><a href="#gallery"
-                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: all 0.3s; padding: 4px 0;"
+                                style="color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 500; transition: all 0.3s; padding: 4px 0;"
                                 onmouseover="this.style.color='#fff'; this.style.paddingLeft='6px'"
                                 onmouseout="this.style.color='#d1d5db'; this.style.paddingLeft='0'"><i
-                                    class="fas fa-chevron-right" style="font-size: 10px; color: #6b7280;"></i>
+                                    class="fas fa-chevron-right" style="font-size: 11px; color: #6b7280;"></i>
                                 Gallery</a></li>
                     </ul>
                 </div>
 
-                <!-- Right: Contact Us -->
-                <div class="md:justify-self-end" style="padding-left: 40px;">
+                <!-- Right: Get In Touch -->
+                <div class="footer-col-contact md:justify-self-end" style="padding-left: 40px; padding-top: 10px;">
                     <style>
                         .footer-contact-item {
                             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
                             cursor: default;
-                            padding: 4px 0;
+                            padding: 6px 0;
                         }
 
                         .footer-contact-item:hover {
@@ -2433,9 +2545,10 @@
                             text-decoration: none;
                             display: inline-flex;
                             align-items: center;
-                            gap: 8px;
-                            font-size: 14px;
-                            padding: 6px 0;
+                            gap: 12px;
+                            font-size: 17px;
+                            font-weight: 500;
+                            padding: 8px 0;
                             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
                             border-bottom: 1px solid transparent;
                         }
@@ -2451,122 +2564,51 @@
                             transition-duration: 0.1s;
                         }
 
-                        .footer-contact-link i {
+                        .footer-contact-link i,
+                        .footer-contact-item i {
                             transition: all 0.3s ease;
                         }
 
-                        .footer-contact-link:hover i {
-                            color: #3b82f6 !important;
+                        .footer-contact-link:hover i,
+                        .footer-contact-item:hover i {
+                            color: #ffffff !important;
                             transform: scale(1.2);
                         }
                     </style>
-                    <h4 class="text-2xl font-light mb-6"
-                        style="font-family: 'Times New Roman', Times, serif; color: #fff;">Contact Us</h4>
-                    <div class="mb-6 text-sm text-gray-200 footer-contact-item"
-                        style="line-height: 1.5; padding: 2px 0;">
-                        Sardar Patel Arcade, Canal Road<br>
-                        Morbi - Gujarat - India<br>
-                        ZIP Code 363641
+                    <h4 class="mb-8"
+                        style="font-size: 1.85rem; font-weight: 700; font-family: 'Times New Roman', Times, serif; color: #fff; letter-spacing: 1.5px;">
+                        Get In Touch</h4>
+                    <div class="mb-6 footer-contact-item"
+                        style="font-size: 17px; line-height: 1.8; padding: 2px 0; display: flex; align-items: flex-start; gap: 14px; color: #d1d5db;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 18px; color: #ffffff; margin-top: 6px;"></i>
+                        <span>
+                            Sardar Patel Arcade, Canal Road<br>
+                            Morbi - Gujarat - India<br>
+                            ZIP Code 363641
+                        </span>
                     </div>
-                    <p class="mb-2">
+                    <p class="mb-3">
                         <a href="tel:+917435912528" class="footer-contact-link">
-                            <i class="fas fa-phone-alt" style="font-size: 13px; color: #6b7280;"></i>+91 74359 12528
+                            <i class="fas fa-phone-alt" style="font-size: 18px; color: #ffffff;"></i>+91 74359 12528
                         </a>
                     </p>
                     <p class="mb-1">
                         <a href="mailto:export@teiof.com" class="footer-contact-link">
-                            <i class="fas fa-envelope" style="font-size: 13px; color: #6b7280;"></i>export@teiof.com
+                            <i class="fas fa-envelope" style="font-size: 18px; color: #ffffff;"></i>export@teiof.com
                         </a>
                     </p>
                 </div>
 
             </div>
+
+            <!-- Divider and Copyright Centered -->
+            <div class="footer-copyright-wrap"
+                style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 5.5rem; padding-top: 2rem; text-align: center;">
+                <p style="font-size: 15px; color: #9ca3af; margin: 0;">© 2024 <strong style="color: #d1d5db;">TEIOF
+                        IMPEX</strong> All rights reserved.</p>
+            </div>
         </div>
     </footer>
-
-    <!-- Social Media Section -->
-    <section class="social-media-section"
-        style="background-color: #000000; padding: 1.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-        <style>
-            .social-icon-link {
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                border: 1.5px solid #4b5563;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #d1d5db;
-                font-size: 20px;
-                text-decoration: none;
-                transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            }
-
-            .social-icon-link:hover {
-                transform: scale(1.2) translateY(-4px);
-                box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-            }
-
-            .social-icon-link:active {
-                transform: scale(0.9);
-                transition-duration: 0.1s;
-            }
-
-            .social-icon-link.social-wa:hover {
-                color: #25D366;
-                border-color: #25D366;
-                box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
-            }
-
-            .social-icon-link.social-li:hover {
-                color: #0A66C2;
-                border-color: #0A66C2;
-                box-shadow: 0 0 20px rgba(10, 102, 194, 0.3);
-            }
-
-            .social-icon-link.social-fb:hover {
-                color: #1877F2;
-                border-color: #1877F2;
-                box-shadow: 0 0 20px rgba(24, 119, 242, 0.3);
-            }
-
-            .social-icon-link.social-ig:hover {
-                color: #E1306C;
-                border-color: #E1306C;
-                box-shadow: 0 0 20px rgba(225, 48, 108, 0.3);
-            }
-
-            .social-icon-link.social-yt:hover {
-                color: #FF0000;
-                border-color: #FF0000;
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-            }
-        </style>
-        <div class="container mx-auto px-4" style="max-width: 1200px;">
-            <div style="display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;">
-                <a href="https://wa.me/917435912528" target="_blank" class="social-icon-link social-wa">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/teiof-impex?originalSubdomain=in" target="_blank"
-                    class="social-icon-link social-li">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://facebook.com/teiof.impex" target="_blank" class="social-icon-link social-fb">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/teiof_impex/" target="_blank" class="social-icon-link social-ig">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://youtube.com/@teiofimpex" target="_blank" class="social-icon-link social-yt">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <p style="font-size: 12px; color: #9ca3af;">© 2024 <strong style="color: #d1d5db;">TEIOF IMPEX</strong>
-                    All rights reserved.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
